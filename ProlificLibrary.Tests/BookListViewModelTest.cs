@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using System;
 namespace ProlificLibrary.Tests
 {
@@ -8,7 +8,7 @@ namespace ProlificLibrary.Tests
 		[Test()]
 		public void TestLoadData() {
 			var viewModel = new BookListViewModel();
-			var books = viewModel.LoadData();
+			var books = viewModel.LoadBooks();
 			Assert.AreEqual(books.Length, 1);
 			Assert.AreEqual(books[0].author, "Some Author");
 		}

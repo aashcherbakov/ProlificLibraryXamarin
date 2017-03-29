@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace ProlificLibrary
 {
 	public class BookListViewModel
@@ -7,7 +7,7 @@ namespace ProlificLibrary
 		{
 		}
 
-		public Book[] LoadData() {
+		public Book[] LoadBooks() {
 			var books = new Book[] {
 				new Book("My Title", "Some Author")
 			};
