@@ -9,7 +9,7 @@ namespace ProlificLibrary.iOS
 	/// </summary>
 	public class BookListTableSource: UITableViewSource
 	{
-		public const string kCellIdentifier = "BookListCell";
+		public const string kCellIdentifier = "BookListTableViewCell";
 
 		private Book[] books = new Book[] { };
 
@@ -21,10 +21,8 @@ namespace ProlificLibrary.iOS
 		}
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath) {
-			var cell = tableView.DequeueReusableCell(kCellIdentifier, indexPath);
-			if (cell == null) {
-				cell = new UITableViewCell(UITableViewCellStyle.Subtitle, kCellIdentifier);
-			}
+			var cell = tableView.DequeueReusableCell(kCellIdentifier, indexPath) as BookListTableViewCell;
+
 
 			SetupCell(cell, indexPath);
 			return cell;
@@ -34,12 +32,9 @@ namespace ProlificLibrary.iOS
 			return books.Length;
 		}
 
-		private void SetupCell(UITableViewCell cell, NSIndexPath indexPath) {
+		private void SetupCell(BookListTableViewCell cell, NSIndexPath indexPath) {
 			var book = GetBook(indexPath);
-			if (book != null && cell != null) {
-				cell.TextLabel.Text = book.title;
-				cell.DetailTextLabel.Text = book.author;
-			}
+			cell.Setup(book);
 		}
 
 		private Book GetBook(NSIndexPath indexPath) {

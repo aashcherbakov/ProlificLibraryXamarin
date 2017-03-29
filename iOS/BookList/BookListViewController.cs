@@ -22,7 +22,7 @@ namespace ProlificLibrary.iOS
 
 		private void SetupTableView() {
 			tableSource = new BookListTableSource();
-			tableView.RegisterClassForCellReuse(typeof(UITableViewCell), "BookListCell");
+			tableView.RegisterNibForCellReuse(BookListTableViewCell.Nib, BookListTableViewCell.Key);
 			tableView.Source = tableSource;
 		}
 
