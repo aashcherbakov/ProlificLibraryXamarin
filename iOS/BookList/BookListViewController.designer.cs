@@ -10,18 +10,23 @@ using System.CodeDom.Compiler;
 
 namespace ProlificLibrary.iOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("BookListViewController")]
+    partial class BookListViewController
     {
         [Outlet]
-        UIKit.UIButton Button { get; set; }
+        UIKit.UITableView tableView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView tableView { get; set; }
+        UIKit.UIActivityIndicatorView activityIndicator { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (activityIndicator != null) {
+                activityIndicator.Dispose ();
+                activityIndicator = null;
+            }
+
             if (tableView != null) {
                 tableView.Dispose ();
                 tableView = null;

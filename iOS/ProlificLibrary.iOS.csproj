@@ -97,10 +97,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="BookList\" />
+    <Folder Include="BookList\Views\" />
+    <Folder Include="BookList\State\" />
+    <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="BookList\Views\BookListTableViewCell.xib" />
+    <InterfaceDefinition Include="BookList\Views\BookListEmptyView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -109,10 +115,22 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
+    <Compile Include="BookList\BookListViewController.cs" />
+    <Compile Include="BookList\BookListViewController.designer.cs">
+      <DependentUpon>BookListViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookList\BookListTableSource.cs" />
+    <Compile Include="BookList\Views\BookListTableViewCell.cs" />
+    <Compile Include="BookList\Views\BookListTableViewCell.designer.cs">
+      <DependentUpon>BookListTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookList\Views\BookListEmptyView.cs" />
+    <Compile Include="BookList\Views\BookListEmptyView.designer.cs">
+      <DependentUpon>BookListEmptyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookList\State\BookListState.cs" />
+    <Compile Include="BookList\State\BookListStateFactory.cs" />
+    <Compile Include="Utility\Alerter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
