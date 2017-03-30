@@ -6,8 +6,8 @@ namespace ProlificLibrary
 	public class BookListViewModel
 	{
 		private IResource resource;
-		public BookListViewModel(IResource resource)
-		{
+
+		public BookListViewModel(IResource resource) {
 			this.resource = resource;
 		}
 

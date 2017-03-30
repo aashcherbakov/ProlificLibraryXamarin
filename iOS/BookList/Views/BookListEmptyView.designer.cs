@@ -7,29 +7,31 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
+using UIKit;
 
 namespace ProlificLibrary.iOS
 {
-    [Register ("BookListViewController")]
-    partial class BookListViewController
+    [Register ("BookListEmptyView")]
+    partial class BookListEmptyView
     {
         [Outlet]
-        UIKit.UITableView tableView { get; set; }
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel titleLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIActivityIndicatorView activityIndicator { get; set; }
+        UIKit.UIButton tryAgainButton { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (activityIndicator != null) {
-                activityIndicator.Dispose ();
-                activityIndicator = null;
+            if (titleLabel != null) {
+                titleLabel.Dispose ();
+                titleLabel = null;
             }
 
-            if (tableView != null) {
-                tableView.Dispose ();
-                tableView = null;
+            if (tryAgainButton != null) {
+                tryAgainButton.Dispose ();
+                tryAgainButton = null;
             }
         }
     }

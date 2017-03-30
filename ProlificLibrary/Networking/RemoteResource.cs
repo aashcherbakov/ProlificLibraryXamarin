@@ -8,9 +8,7 @@ namespace ProlificLibrary
 	{
 		private const string kBaseUrl = "http://prolific-interview.herokuapp.com/58c1701210480b000a2948d6/";
 
-		public RemoteResource()
-		{
-		}
+		public RemoteResource() { } // constructor
 
 		public async Task<Book[]> GetBooks()
 		{

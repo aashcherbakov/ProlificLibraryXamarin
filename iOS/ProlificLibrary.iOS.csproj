@@ -99,11 +99,13 @@
     <Folder Include="Resources\" />
     <Folder Include="BookList\" />
     <Folder Include="BookList\Views\" />
+    <Folder Include="BookList\State\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="BookList\Views\BookListTableViewCell.xib" />
+    <InterfaceDefinition Include="BookList\Views\BookListEmptyView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -121,6 +123,12 @@
     <Compile Include="BookList\Views\BookListTableViewCell.designer.cs">
       <DependentUpon>BookListTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookList\Views\BookListEmptyView.cs" />
+    <Compile Include="BookList\Views\BookListEmptyView.designer.cs">
+      <DependentUpon>BookListEmptyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookList\State\BookListState.cs" />
+    <Compile Include="BookList\State\BookListStateFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

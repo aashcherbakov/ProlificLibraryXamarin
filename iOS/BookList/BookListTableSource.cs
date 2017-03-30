@@ -4,21 +4,16 @@ using UIKit;
 
 namespace ProlificLibrary.iOS
 {
-	/// <summary>
-	/// Could not create test file because of iOS specific apis 
-	/// </summary>
 	public class BookListTableSource: UITableViewSource
 	{
 		public const string kCellIdentifier = "BookListTableViewCell";
 
 		private Book[] books = new Book[] { };
 
-		public BookListTableSource() {
-		}
+		public BookListTableSource() { } // Constructor
 
 		public void UpdateWithBooks(Book[] newBooks) {
 			books = newBooks;
-			Console.WriteLine(books[0].author);
 		}
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath) {
