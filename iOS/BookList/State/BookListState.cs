@@ -10,13 +10,13 @@ namespace ProlificLibrary.iOS
 		public BookListEmptyView emptyView;
 		public UIActivityIndicatorView activityIndicator;
 
+		/// Manipulates visibility of key views and controlls activity indicator.
 		public abstract void UpdateDesign();
 	}
 
 	public class BookListEmptyState : BookListState
 	{
-		public override void UpdateDesign()
-		{
+		public override void UpdateDesign() {
 			tableView.Hidden = true;
 
 			emptyView = BookListEmptyView.Create();
@@ -30,8 +30,8 @@ namespace ProlificLibrary.iOS
 	public class BookListDataState : BookListState
 	{
 		private const float kEstimatedCellHeight = 40.0f;
-		public override void UpdateDesign()
-		{
+
+		public override void UpdateDesign() {
 			tableView.Hidden = false;
 
 			emptyView?.RemoveFromSuperview();
@@ -43,8 +43,7 @@ namespace ProlificLibrary.iOS
 
 	public class BookListLoadingState : BookListState
 	{
-		public override void UpdateDesign()
-		{
+		public override void UpdateDesign()	{
 			tableView.Hidden = true;
 			activityIndicator.StartAnimating();
 		}

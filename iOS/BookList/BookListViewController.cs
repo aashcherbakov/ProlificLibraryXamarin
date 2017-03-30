@@ -15,29 +15,19 @@ namespace ProlificLibrary.iOS
 
 		public BookListViewController(IntPtr handle) : base(handle) { }
 
-		public override void ViewDidLoad()
+		public async override void ViewDidLoad() 
 		{
 			base.ViewDidLoad();
 
 			SetupDesign();
 			UpdateState(null);
-			LoadData();
+			await LoadData();
 		}
 
-		private void UpdateState(Book[] books)
-		{
-			state = BookListStateFactory.Create(books);
-			state.emptyView = emptyView;
-			state.tableView = tableView;
-			state.mainView = View;
-			state.activityIndicator = activityIndicator;
-		}
-
-		private void SetupDesign()
+		private void SetupDesign() 
 		{
 			tableSource = new BookListTableSource();
 			emptyView = null;
-
 			activityIndicator.HidesWhenStopped = true;
 
 			tableView.Hidden = true;
@@ -46,21 +36,46 @@ namespace ProlificLibrary.iOS
 			tableView.Source = tableSource;
 		}
 
-		private void LoadData()
+		private void UpdateState(Book[] books) 
+		{
+			state = BookListStateFactory.Create(books);
+			state.emptyView = emptyView;
+			state.tableView = tableView;
+			state.mainView = View;
+			state.activityIndicator = activityIndicator;
+			state.UpdateDesign();
+		}
+
+		private async Task LoadData()
 		{
 			viewModel = new BookListViewModel(new RemoteResource());
 
-			Task.Run(async () =>
+			try
 			{
 				var books = await viewModel.LoadBooks();
-				InvokeOnMainThread(() =>
-				{
-					tableSource.UpdateWithBooks(books);
-					tableView.ReloadData();
-					UpdateState(books);
-					state.UpdateDesign();
-				});
+				UpdateDesign(books);
+			}
+			catch (Exception exception)
+			{
+				PresentAlert(exception);
+			}
+		}
+
+		private void PresentAlert(Exception exception)
+		{
+			var alert = Alerter.PresentOKAlert("Oops", exception.Message, this);
+			PresentViewController(alert, true, () =>
+			{
+				UpdateState(new Book[] { });
 			});
+		}
+
+		private void UpdateDesign(Book[] books) 
+		{
+			tableSource.UpdateWithBooks(books);
+			tableView.ReloadData();
+			UpdateState(books);
+			state.UpdateDesign();
 		}
 	}
 }

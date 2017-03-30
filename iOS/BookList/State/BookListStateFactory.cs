@@ -3,20 +3,13 @@ namespace ProlificLibrary.iOS
 {
 	public static class BookListStateFactory
 	{
-		public static BookListState Create(Book[] books)
-		{
-			if (books == null)
-			{
+		public static BookListState Create(Book[] books) {
+			if (books == null) {
 				return new BookListLoadingState();
-			}
-			else
-			{
-				if (books.Length == 0)
-				{
+			} else {
+				if (books.Length == 0) {
 					return new BookListEmptyState();
-				}
-				else
-				{
+				} else {
 					return new BookListDataState();
 				}
 			}

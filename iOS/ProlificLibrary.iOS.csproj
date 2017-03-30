@@ -100,6 +100,7 @@
     <Folder Include="BookList\" />
     <Folder Include="BookList\Views\" />
     <Folder Include="BookList\State\" />
+    <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -129,6 +130,7 @@
     </Compile>
     <Compile Include="BookList\State\BookListState.cs" />
     <Compile Include="BookList\State\BookListStateFactory.cs" />
+    <Compile Include="Utility\Alerter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
