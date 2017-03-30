@@ -19,10 +19,8 @@ namespace ProlificLibrary.iOS
 		}
 
 		public void Setup(Book book) {
-			if (book != null) {
-				titleLabel.Text = book.title;
-				subtitleLabel.Text = book.author;
-			}
+			titleLabel.Text = book?.title;
+			subtitleLabel.Text = book?.author;
 		}
 	}
 }

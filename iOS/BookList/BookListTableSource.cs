@@ -22,8 +22,6 @@ namespace ProlificLibrary.iOS
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath) {
 			var cell = tableView.DequeueReusableCell(kCellIdentifier, indexPath) as BookListTableViewCell;
-
-
 			SetupCell(cell, indexPath);
 			return cell;
 		}
@@ -44,5 +42,6 @@ namespace ProlificLibrary.iOS
 
 			return books[indexPath.Row];
 		}
+
 	}
 }

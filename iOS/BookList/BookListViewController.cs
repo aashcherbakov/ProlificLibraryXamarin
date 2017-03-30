@@ -9,6 +9,8 @@ namespace ProlificLibrary.iOS
 		private BookListViewModel viewModel;
 		private BookListTableSource tableSource;
 
+		private const float kEstimatedCellHeight = 40.0f;
+
 		public BookListViewController(IntPtr handle) : base(handle) {
 		}
 
@@ -19,10 +21,10 @@ namespace ProlificLibrary.iOS
 			LoadData();
 		}
 
-
 		private void SetupTableView() {
 			tableSource = new BookListTableSource();
 			tableView.RegisterNibForCellReuse(BookListTableViewCell.Nib, BookListTableViewCell.Key);
+			tableView.EstimatedRowHeight = kEstimatedCellHeight;
 			tableView.Source = tableSource;
 		}
 
