@@ -1,18 +1,18 @@
 using System;
+using System.Threading.Tasks;
+
 namespace ProlificLibrary
 {
 	public class BookListViewModel
 	{
-		public BookListViewModel()
+		private IResource resource;
+		public BookListViewModel(IResource resource)
 		{
+			this.resource = resource;
 		}
 
-		public Book[] LoadBooks() {
-			var books = new Book[] {
-				new Book("My Title", "Some Author")
-			};
-
-			return books;
+		public async Task<Book[]> LoadBooks() {
+			return await resource.GetBooks();
 		}
 	}
 }

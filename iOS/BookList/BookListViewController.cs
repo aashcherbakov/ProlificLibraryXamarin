@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Threading.Tasks;
 using UIKit;
 
 namespace ProlificLibrary.iOS
@@ -29,10 +29,17 @@ namespace ProlificLibrary.iOS
 		}
 
 		private void LoadData() {
-			viewModel = new BookListViewModel();
-			var books = viewModel.LoadBooks();
-			tableSource.UpdateWithBooks(books);
-			tableView.ReloadData();
+			viewModel = new BookListViewModel(new RemoteResource());
+
+			Task.Run(async() => {
+				var books = await viewModel.LoadBooks();
+				Console.WriteLine(books);
+
+				tableSource.UpdateWithBooks(books);
+				InvokeOnMainThread(() => {
+					tableView.ReloadData();
+				});
+			});
 		}
 	}
 }

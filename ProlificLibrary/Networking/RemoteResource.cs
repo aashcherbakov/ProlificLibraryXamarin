@@ -1,0 +1,26 @@
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+namespace ProlificLibrary
+{
+	public class RemoteResource: IResource
+	{
+		private const string kBaseUrl = "http://prolific-interview.herokuapp.com/58c1701210480b000a2948d6/";
+
+		public RemoteResource()
+		{
+		}
+
+		public async Task<Book[]> GetBooks()
+		{
+			using (var client = new HttpClient())
+			{
+				var result = await client.GetAsync(kBaseUrl + "books");
+				var content = await result.Content.ReadAsStringAsync();
+				var books = JsonConvert.DeserializeObject<Book[]>(content);
+				return books;
+			}
+		}
+	}
+}

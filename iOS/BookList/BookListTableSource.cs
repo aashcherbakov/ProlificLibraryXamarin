@@ -18,6 +18,7 @@ namespace ProlificLibrary.iOS
 
 		public void UpdateWithBooks(Book[] newBooks) {
 			books = newBooks;
+			Console.WriteLine(books[0].author);
 		}
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath) {
@@ -29,6 +30,8 @@ namespace ProlificLibrary.iOS
 		public override nint RowsInSection(UITableView tableview, nint section) {
 			return books.Length;
 		}
+
+		// Private functions
 
 		private void SetupCell(BookListTableViewCell cell, NSIndexPath indexPath) {
 			var book = GetBook(indexPath);
@@ -42,6 +45,5 @@ namespace ProlificLibrary.iOS
 
 			return books[indexPath.Row];
 		}
-
 	}
 }
