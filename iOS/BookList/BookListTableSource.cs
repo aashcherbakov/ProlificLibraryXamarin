@@ -1,12 +1,24 @@
 ﻿using System;
 using Foundation;
 using UIKit;
+using System.Threading.Tasks;
 
 namespace ProlificLibrary.iOS
 {
+
+	public delegate Book OnCellSelectionDelegate();
+
+
 	public class BookListTableSource: UITableViewSource
 	{
 		public const string kCellIdentifier = "BookListTableViewCell";
+
+        public BookListViewModel viewModel;
+
+        public void OnCellSelection(OnCellSelectionDelegate cellDelegete) 
+        {
+            
+        }
 
 		private Book[] books = new Book[] { };
 
@@ -26,14 +38,32 @@ namespace ProlificLibrary.iOS
 			return books.Length;
 		}
 
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            var book = GetBookFromArray(indexPath);
+
+            try 
+            {
+                Task.Run(async () =>
+                {
+                    var retrievedBook = await viewModel.GetBook(book.id);
+                    Console.WriteLine(retrievedBook.id);
+                });
+            } 
+            catch (Exception exception) 
+            {
+                Console.WriteLine(exception.Message);
+            }
+        }
+
 		// Private functions
 
 		private void SetupCell(BookListTableViewCell cell, NSIndexPath indexPath) {
-			var book = GetBook(indexPath);
+			var book = GetBookFromArray(indexPath);
 			cell.Setup(book);
 		}
 
-		private Book GetBook(NSIndexPath indexPath) {
+        private Book GetBookFromArray(NSIndexPath indexPath) {
 			if (books.Length < indexPath.Row) {
 				return null;
 			}

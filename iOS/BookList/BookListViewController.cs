@@ -19,6 +19,8 @@ namespace ProlificLibrary.iOS
 		{
 			base.ViewDidLoad();
 
+			viewModel = new BookListViewModel(new RemoteResource());
+
 			SetupDesign();
 			UpdateState(null);
 			await LoadData();
@@ -27,6 +29,7 @@ namespace ProlificLibrary.iOS
 		private void SetupDesign() 
 		{
 			tableSource = new BookListTableSource();
+            tableSource.viewModel = viewModel;
 			emptyView = null;
 			activityIndicator.HidesWhenStopped = true;
 
@@ -48,8 +51,6 @@ namespace ProlificLibrary.iOS
 
 		private async Task LoadData()
 		{
-			viewModel = new BookListViewModel(new RemoteResource());
-
 			try
 			{
 				var books = await viewModel.LoadBooks();
