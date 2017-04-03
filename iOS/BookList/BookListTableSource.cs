@@ -1,28 +1,29 @@
 ﻿using System;
 using Foundation;
 using UIKit;
+using MvvmCross.iOS.Views;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Views;
 using System.Threading.Tasks;
 
 namespace ProlificLibrary.iOS
 {
 
-	public delegate Book OnCellSelectionDelegate();
-
-
-	public class BookListTableSource: UITableViewSource
+	public class BookListTableSource : MvxSimpleTableViewSource
 	{
 		public const string kCellIdentifier = "BookListTableViewCell";
 
-        public BookListViewModel viewModel;
+	    Book[] books;
+        UITableView tableView;
 
-        public void OnCellSelection(OnCellSelectionDelegate cellDelegete) 
-        {
-            
+
+        public BookListTableSource(UITableView tableView) 
+            : base(tableView, kCellIdentifier, kCellIdentifier) {
+
+            this.tableView = tableView;
+            LoadFakeBooks();
         }
 
-		private Book[] books = new Book[] { };
-
-		public BookListTableSource() { } // Constructor
 
 		public void UpdateWithBooks(Book[] newBooks) {
 			books = newBooks;
@@ -40,20 +41,6 @@ namespace ProlificLibrary.iOS
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            var book = GetBookFromArray(indexPath);
-
-            try 
-            {
-                Task.Run(async () =>
-                {
-                    var retrievedBook = await viewModel.GetBook(book.id);
-                    Console.WriteLine(retrievedBook.id);
-                });
-            } 
-            catch (Exception exception) 
-            {
-                Console.WriteLine(exception.Message);
-            }
         }
 
 		// Private functions
@@ -70,5 +57,12 @@ namespace ProlificLibrary.iOS
 
 			return books[indexPath.Row];
 		}
+
+        private void LoadFakeBooks() 
+        {
+            books = new Book[] {
+                new Book("id", "Title", "Author")
+            };
+        }
 	}
 }

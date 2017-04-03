@@ -84,6 +84,27 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core">
+      <HintPath>..\packages\MvvmCross.Core.4.4.0\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.iOS">
+      <HintPath>..\packages\MvvmCross.Core.4.4.0\lib\Xamarin.iOS10\MvvmCross.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\Xamarin.iOS10\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Binding.iOS">
+      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\Xamarin.iOS10\MvvmCross.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.Binding.4.4.0\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProlificLibrary\ProlificLibrary.csproj">
@@ -104,21 +125,18 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="BookList\Views\BookListTableViewCell.xib" />
     <InterfaceDefinition Include="BookList\Views\BookListEmptyView.xib" />
+    <InterfaceDefinition Include="BookList\BookListViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="BookList\BookListViewController.cs" />
-    <Compile Include="BookList\BookListViewController.designer.cs">
-      <DependentUpon>BookListViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="BookList\BookListTableSource.cs" />
     <Compile Include="BookList\Views\BookListTableViewCell.cs" />
     <Compile Include="BookList\Views\BookListTableViewCell.designer.cs">
@@ -131,6 +149,11 @@
     <Compile Include="BookList\State\BookListState.cs" />
     <Compile Include="BookList\State\BookListStateFactory.cs" />
     <Compile Include="Utility\Alerter.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="BookList\BookListViewController.cs" />
+    <Compile Include="BookList\BookListViewController.designer.cs">
+      <DependentUpon>BookListViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

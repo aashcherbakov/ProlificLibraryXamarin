@@ -1,25 +1,45 @@
 using System;
+using MvvmCross.Core.ViewModels;
 using System.Threading.Tasks;
 
 namespace ProlificLibrary
 {
-	public class BookListViewModel
+    public class BookListViewModel : MvxViewModel
 	{
-		private IResource resource;
+        readonly IResource resource;
+        Book[] books;
 
+        public Book[] Books
+        {
+            get { return books; }
+            private set {
+                books = value;
+                RaisePropertyChanged(() => Books);
+            }
+        }
+
+        /// <summary>
+        /// Loads the library and assigns new books to observable property.
+        /// </summary>
+        public void LoadLibrary()
+        {
+            Task.Run(async () => books = await resource.GetBooks());
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="resource">Resource.</param>
 		public BookListViewModel(IResource resource) {
 			this.resource = resource;
 		}
 
-		public async Task<Book[]> LoadBooks() 
+        /// <summary>
+        /// Perform view model initialization - default values, etc.
+        /// </summary>
+        public override void Start()
         {
-			return await resource.GetBooks();
-		}
-
-        public async Task<Book> GetBook(string id) 
-        {
-            return await resource.GetBook(id);
+            base.Start();
         }
-
-	}
+    }
 }

@@ -1,12 +1,16 @@
 ﻿using Foundation;
 using UIKit;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.iOS.Platform;
+using MvvmCross.iOS.Views.Presenters;
+using MvvmCross.Platform;
 
 namespace ProlificLibrary.iOS
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the
 	// User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
 	[Register("AppDelegate")]
-	public class AppDelegate : UIApplicationDelegate
+    public class AppDelegate : MvxApplicationDelegate
 	{
 		// class-level declarations
 
@@ -16,8 +20,27 @@ namespace ProlificLibrary.iOS
 		}
 
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
-			// Override point for customization after application launch.
-			// If not required for your application you can safely delete this method
+			
+			Window = new UIWindow(UIScreen.MainScreen.Bounds);
+
+			// MvvmCross Mod Start---------------------------------------------
+
+			// This class will determine how Views are shown - standard in this example.
+			var presenter = new MvxIosViewPresenter(this, Window);
+
+			// Init the Setup object, which initializes App.cs
+			var setup = new Setup(this, presenter);
+            setup.Initialize();
+
+			// Use IoC to find and start the IMvxAppStart object.
+			// Remember, TipViewModel, inherited from MvxViewModel, was registered as the start object for
+			// IMvxAppStart in Core.App.cs
+			var startup = Mvx.Resolve<IMvxAppStart>();
+            startup.Start();
+
+			// MvvmCross Mod End-----------------------------------------------
+
+			Window.MakeKeyAndVisible();
 
 			return true;
 		}
