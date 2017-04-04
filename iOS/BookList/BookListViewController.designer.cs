@@ -13,6 +13,9 @@ namespace ProlificLibrary.iOS
 	partial class BookListViewController
 	{
 		[Outlet]
+		UIKit.UILabel countLabel { get; set; }
+
+		[Outlet]
 		UIKit.UITableView tableView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -20,6 +23,11 @@ namespace ProlificLibrary.iOS
 			if (tableView != null) {
 				tableView.Dispose ();
 				tableView = null;
+			}
+
+			if (countLabel != null) {
+				countLabel.Dispose ();
+				countLabel = null;
 			}
 		}
 	}

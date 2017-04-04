@@ -6,7 +6,7 @@ namespace ProlificLibrary
 {
     public class BookListViewModel : MvxViewModel
 	{
-        readonly IResource resource;
+        readonly IBookService service;
         Book[] books;
 
         public Book[] Books
@@ -15,6 +15,17 @@ namespace ProlificLibrary
             private set {
                 books = value;
                 RaisePropertyChanged(() => Books);
+                BooksCount = books.Length;
+            }
+        }
+
+        int booksCount;
+        public int BooksCount
+        {
+            get { return booksCount; }
+            set {
+                booksCount = value;
+                RaisePropertyChanged(() => BooksCount);
             }
         }
 
@@ -23,15 +34,17 @@ namespace ProlificLibrary
         /// </summary>
         public void LoadLibrary()
         {
-            Task.Run(async () => books = await resource.GetBooks());
+            Task.Run(async () => {
+                Books = await service.GetBooks();
+            });
         }
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="resource">Resource.</param>
-		public BookListViewModel(IResource resource) {
-			this.resource = resource;
+        /// <param name="service">Resource.</param>
+        public BookListViewModel(IBookService service) {
+			this.service = service;
 		}
 
         /// <summary>

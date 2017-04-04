@@ -31,8 +31,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BookListViewModel.cs" />
     <Compile Include="Models\Book.cs" />
-    <Compile Include="Networking\RemoteResource.cs" />
-    <Compile Include="Networking\IResource.cs" />
+    <Compile Include="Networking\RemoteBookService.cs" />
+    <Compile Include="Networking\IBookService.cs" />
     <Compile Include="CustomAppStart.cs" />
     <Compile Include="App.cs" />
   </ItemGroup>

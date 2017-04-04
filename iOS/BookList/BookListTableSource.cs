@@ -13,7 +13,19 @@ namespace ProlificLibrary.iOS
 	{
 		public const string kCellIdentifier = "BookListTableViewCell";
 
-	    Book[] books;
+        Book[] books;
+
+        public Book[] Books 
+        {
+            get {
+                return books;
+            }
+            set {
+                books = value;
+                this.tableView.ReloadData();
+            }
+        }
+
         UITableView tableView;
 
 
@@ -36,7 +48,7 @@ namespace ProlificLibrary.iOS
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section) {
-			return books.Length;
+			return books?.Length ?? 0;
 		}
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)

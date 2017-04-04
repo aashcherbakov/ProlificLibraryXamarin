@@ -17,12 +17,22 @@ namespace ProlificLibrary.iOS
             base.ViewDidLoad();
 
             var source = new BookListTableSource(tableView);
+
+            // works
             this.AddBindings(new Dictionary<object, string> {
                 { source, "ItemSource Books"}
             });
 
+            // Reqires Binding.BindingContext
+            var bindingSet = this.CreateBindingSet<BookListViewController, BookListViewModel>();
+            bindingSet.Bind(countLabel).To(vm => vm.BooksCount);
+            bindingSet.Apply();
+
+            ViewModel.LoadLibrary();
+
             tableView.Source = source;
-            tableView.ReloadData();
+			ViewModel.LoadLibrary();
+
         }
 
     }

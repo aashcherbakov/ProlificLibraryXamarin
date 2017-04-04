@@ -1,6 +1,7 @@
 ﻿using System;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using MvvmCross.Platform.IoC;
 
 namespace ProlificLibrary
 {
@@ -17,9 +18,15 @@ namespace ProlificLibrary
 		/// </summary>
 		public App()
         {
+            // Requires MvvmCross.Platform.IoC
+            CreatableTypes() // Enumerates all classes with public constructors
+                .EndingWith("Service") // Filteres ones ending with "Service"
+                .AsInterfaces() // Filteres ones that implements an Interface
+                .RegisterAsLazySingleton(); // Registers... why?
+            
 			// Whenever Mvx.Resolve is used, a new instance of Calculation is provided.
-			Mvx.RegisterType<IResource, RemoteResource>();
-            var resourceExample = Mvx.Resolve<IResource>();
+			Mvx.RegisterType<IBookService, RemoteBookService>();
+            var resourceExample = Mvx.Resolve<IBookService>();
 
             // Tells the MvvmCross framework that whenever any code requests an IMvxAppStart reference,
             // the framework should return that same appStart instance.
