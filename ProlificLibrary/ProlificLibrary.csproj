@@ -33,6 +33,7 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Networking\RemoteResource.cs" />
     <Compile Include="Networking\IResource.cs" />
+    <Compile Include="ViewModels\BookDetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />

@@ -6,27 +6,22 @@ using System.Threading.Tasks;
 namespace ProlificLibrary.iOS
 {
 
-	public delegate Book OnCellSelectionDelegate();
-
+	public delegate void BookSelectionDelegate(Book book);
 
 	public class BookListTableSource: UITableViewSource
 	{
-		public const string kCellIdentifier = "BookListTableViewCell";
+        public BookListTableSource() { } // Constructor
 
-        public BookListViewModel viewModel;
+        public const string kCellIdentifier = "BookListTableViewCell";
+        public BookSelectionDelegate selectionDelegate;
 
-        public void OnCellSelection(OnCellSelectionDelegate cellDelegete) 
-        {
-            
-        }
-
-		private Book[] books = new Book[] { };
-
-		public BookListTableSource() { } // Constructor
+        private Book[] books = new Book[] { };
 
 		public void UpdateWithBooks(Book[] newBooks) {
 			books = newBooks;
 		}
+
+        // Overridden functions 
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath) {
 			var cell = tableView.DequeueReusableCell(kCellIdentifier, indexPath) as BookListTableViewCell;
@@ -41,19 +36,7 @@ namespace ProlificLibrary.iOS
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             var book = GetBookFromArray(indexPath);
-
-            try 
-            {
-                Task.Run(async () =>
-                {
-                    var retrievedBook = await viewModel.GetBook(book.id);
-                    Console.WriteLine(retrievedBook.id);
-                });
-            } 
-            catch (Exception exception) 
-            {
-                Console.WriteLine(exception.Message);
-            }
+            selectionDelegate(book);
         }
 
 		// Private functions

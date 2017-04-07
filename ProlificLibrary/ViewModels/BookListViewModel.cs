@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 
 namespace ProlificLibrary
 {
 	public class BookListViewModel
 	{
-		private IResource resource;
+        readonly IResource resource;
 
 		public BookListViewModel(IResource resource) {
 			this.resource = resource;

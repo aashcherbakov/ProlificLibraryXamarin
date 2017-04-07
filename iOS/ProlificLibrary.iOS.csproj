@@ -101,12 +101,16 @@
     <Folder Include="BookList\Views\" />
     <Folder Include="BookList\State\" />
     <Folder Include="Utility\" />
+    <Folder Include="BookDetails\" />
+    <Folder Include="BookDetails\Views\" />
+    <Folder Include="EditBook\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="BookList\Views\BookListTableViewCell.xib" />
     <InterfaceDefinition Include="BookList\Views\BookListEmptyView.xib" />
+    <InterfaceDefinition Include="EditBook\EditBookViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -131,6 +135,14 @@
     <Compile Include="BookList\State\BookListState.cs" />
     <Compile Include="BookList\State\BookListStateFactory.cs" />
     <Compile Include="Utility\Alerter.cs" />
+    <Compile Include="BookDetails\BookDetailsViewController.cs" />
+    <Compile Include="BookDetails\BookDetailsViewController.designer.cs">
+      <DependentUpon>BookDetailsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditBook\EditBookViewController.cs" />
+    <Compile Include="EditBook\EditBookViewController.designer.cs">
+      <DependentUpon>EditBookViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

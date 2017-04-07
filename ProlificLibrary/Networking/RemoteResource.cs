@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -22,6 +23,17 @@ namespace ProlificLibrary
         }
 
         public async Task<Book> GetBook(string id)
+        {
+            using (var client = new HttpClient())
+            {
+                var result = await client.GetAsync(kBaseUrl + "books/" + id);
+                var content = await result.Content.ReadAsStringAsync();
+                var book = JsonConvert.DeserializeObject<Book>(content);
+                return book;
+            }
+        }
+
+        public async Task<Book> CheckOutBook(string id)
         {
             using (var client = new HttpClient())
             {
