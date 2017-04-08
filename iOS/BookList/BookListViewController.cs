@@ -19,6 +19,8 @@ namespace ProlificLibrary.iOS
 		{
 			base.ViewDidLoad();
 
+			viewModel = new BookListViewModel(new RemoteResource());
+
 			SetupDesign();
 			UpdateState(null);
 			await LoadData();
@@ -27,6 +29,7 @@ namespace ProlificLibrary.iOS
 		private void SetupDesign() 
 		{
 			tableSource = new BookListTableSource();
+            tableSource.selectionDelegate = DidSelectBook;
 			emptyView = null;
 			activityIndicator.HidesWhenStopped = true;
 
@@ -35,6 +38,15 @@ namespace ProlificLibrary.iOS
 			tableView.EstimatedRowHeight = kEstimatedCellHeight;
 			tableView.Source = tableSource;
 		}
+
+        private void DidSelectBook(Book book) 
+        {
+            var detailsViewModel = new BookDetailsViewModel(book);
+            var storyBoard = UIStoryboard.FromName("Main", null);
+            var detailsController = storyBoard.InstantiateViewController("BookDetailsViewController") as BookDetailsViewController;
+            detailsController.viewModel = detailsViewModel;
+            NavigationController.PushViewController(detailsController, true);
+        }
 
 		private void UpdateState(Book[] books) 
 		{
@@ -48,8 +60,6 @@ namespace ProlificLibrary.iOS
 
 		private async Task LoadData()
 		{
-			viewModel = new BookListViewModel(new RemoteResource());
-
 			try
 			{
 				var books = await viewModel.LoadBooks();
