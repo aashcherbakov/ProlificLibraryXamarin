@@ -7,6 +7,6 @@ namespace ProlificLibrary
 	{
 		Task<Book[]> GetBooks();
         Task<Book> GetBook(string id);
-        Task<Book> CheckOutBook(string id);
+        Task<Book> CheckOutBook(string id, string name);
 	}
 }
