@@ -12,21 +12,6 @@ namespace ProlificLibrary.iOS
 
 		/// Manipulates visibility of key views and controlls activity indicator.
 		public abstract void UpdateDesign();
-
-        public static BookListState Create(BookListStateOption option)
-        {
-            switch (option)
-            {
-                case BookListStateOption.Empty:
-                    return new BookListEmptyState();
-                case BookListStateOption.Default:
-                    return new BookListDataState();
-                case BookListStateOption.Loading:
-                    return new BookListLoadingState();
-                default:
-                    return new BookListEmptyState();
-            }
-        }
     }
 
     public class BookListEmptyState : BookListState

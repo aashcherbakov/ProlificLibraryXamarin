@@ -20,16 +20,16 @@ namespace ProlificLibrary.iOS
             this.activityIndicator = activityIndicator;
         }
 
-        public IBookListState Create(BookListStateOption option)
+        public IBookListState Create(BookListViewModel.State option)
         {
             BookListState state;
             switch (option)
             {
-                case BookListStateOption.Empty:
+                case BookListViewModel.State.Empty:
                     state = new BookListEmptyState(); break;
-                case BookListStateOption.Default:
+                case BookListViewModel.State.Default:
                     state = new BookListDataState(); break;
-                case BookListStateOption.Loading:
+                case BookListViewModel.State.Loading:
                     state = new BookListLoadingState(); break;
                 default:
                     state = new BookListEmptyState(); break;

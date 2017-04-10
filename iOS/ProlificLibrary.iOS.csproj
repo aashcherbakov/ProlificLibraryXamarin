@@ -142,6 +142,7 @@
       <DependentUpon>EditBookViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="BookList\State\BookListStateFactory.cs" />
+    <Compile Include="Utility\Router.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

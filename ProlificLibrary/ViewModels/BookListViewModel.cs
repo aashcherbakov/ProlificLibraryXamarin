@@ -4,12 +4,7 @@ using System.Threading.Tasks;
 
 namespace ProlificLibrary
 {
-    public enum BookListStateOption
-    {
-        Default,
-        Empty,
-        Loading
-    }
+    
 
     public interface IBookListState
     {
@@ -18,17 +13,23 @@ namespace ProlificLibrary
 
     public interface IBookListStateFactory
     {
-        IBookListState Create(BookListStateOption option);
+        IBookListState Create(BookListViewModel.State option);
     }
 
 	public class BookListViewModel
 	{
+        public enum State
+        {
+            Default,
+            Empty,
+            Loading
+        }
+
         readonly IResource resource;
         readonly IBookListStateFactory stateFactory;
+        IBookListState state;
 
         public List<Book> Books { get; private set; }
-        public IBookListState State { get; private set; }
-
         public readonly string Title = "Library";
 
         public BookListViewModel(IResource resource, IBookListStateFactory stateFactory) {
@@ -36,15 +37,20 @@ namespace ProlificLibrary
             this.stateFactory = stateFactory;
 		}
 
-		public async Task<Book[]> LoadBooks() 
+		public async Task LoadBooks() 
         {
-            UpdateState(BookListStateOption.Loading);
-
-            var booksArray = await resource.GetBooks();
-            Books = new List<Book>(booksArray);
-
-            UpdateState(BookListStateOption.Default);
-            return booksArray;
+            UpdateState(State.Loading);
+            try 
+            {
+                var booksArray = await resource.GetBooks();
+                Books = new List<Book>(booksArray);
+                UpdateState(State.Default);
+            } 
+            catch
+            {
+                UpdateState(State.Empty);
+                throw new Exception("We could not load books, sorry :(");
+            }
 		}
 
         public async Task<Book> GetBook(string id) 
@@ -63,12 +69,17 @@ namespace ProlificLibrary
 
         // Private functions
 
-        void UpdateState(BookListStateOption option)
+        void UpdateState(State newState)
         {
-            State = stateFactory.Create(option);
-            State.UpdateDesign();
+            state = stateFactory.Create(newState);
+            state.UpdateDesign();
         }
-	}
+
+        public static implicit operator WeakReference<object>(BookListViewModel v)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 
 }
