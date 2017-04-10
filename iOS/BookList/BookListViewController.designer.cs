@@ -1,6 +1,6 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
+// This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
@@ -19,6 +19,10 @@ namespace ProlificLibrary.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIActivityIndicatorView activityIndicator { get; set; }
+
+        [Action ("UIBarButtonItemLRb1vgKg_Activated:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void UIBarButtonItemLRb1vgKg_Activated (UIKit.UIBarButtonItem sender);
 
         void ReleaseDesignerOutlets ()
         {

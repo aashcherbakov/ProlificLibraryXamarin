@@ -34,6 +34,7 @@
     <Compile Include="Networking\RemoteResource.cs" />
     <Compile Include="Networking\IResource.cs" />
     <Compile Include="ViewModels\BookDetailsViewModel.cs" />
+    <Compile Include="ViewModels\BookEditViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
