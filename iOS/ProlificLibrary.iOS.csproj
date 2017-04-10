@@ -132,7 +132,6 @@
       <DependentUpon>BookListEmptyView.cs</DependentUpon>
     </Compile>
     <Compile Include="BookList\State\BookListState.cs" />
-    <Compile Include="BookList\State\BookListStateFactory.cs" />
     <Compile Include="Utility\Alerter.cs" />
     <Compile Include="BookDetails\BookDetailsViewController.cs" />
     <Compile Include="BookDetails\BookDetailsViewController.designer.cs">
@@ -142,6 +141,7 @@
     <Compile Include="EditBook\EditBookViewController.designer.cs">
       <DependentUpon>EditBookViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookList\State\BookListStateFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

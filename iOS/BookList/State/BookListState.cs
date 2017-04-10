@@ -3,7 +3,7 @@ using UIKit;
 
 namespace ProlificLibrary.iOS
 {
-	public abstract class BookListState
+    public abstract class BookListState: IBookListState
 	{
 		public UIView mainView;
 		public UITableView tableView;
@@ -12,9 +12,24 @@ namespace ProlificLibrary.iOS
 
 		/// Manipulates visibility of key views and controlls activity indicator.
 		public abstract void UpdateDesign();
-	}
 
-	public class BookListEmptyState : BookListState
+        public static BookListState Create(BookListStateOption option)
+        {
+            switch (option)
+            {
+                case BookListStateOption.Empty:
+                    return new BookListEmptyState();
+                case BookListStateOption.Default:
+                    return new BookListDataState();
+                case BookListStateOption.Loading:
+                    return new BookListLoadingState();
+                default:
+                    return new BookListEmptyState();
+            }
+        }
+    }
+
+    public class BookListEmptyState : BookListState
 	{
 		public override void UpdateDesign() {
 			tableView.Hidden = true;
@@ -29,15 +44,16 @@ namespace ProlificLibrary.iOS
 
 	public class BookListDataState : BookListState
 	{
-		private const float kEstimatedCellHeight = 40.0f;
+        const float kEstimatedCellHeight = 40.0f;
 
-		public override void UpdateDesign() {
+        public override void UpdateDesign() {
 			tableView.Hidden = false;
 
 			emptyView?.RemoveFromSuperview();
 			emptyView = null;
 
 			activityIndicator.StopAnimating();
+            tableView.ReloadData();
 		}
 	}
 
