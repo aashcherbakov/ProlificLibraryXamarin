@@ -5,41 +5,51 @@ namespace ProlificLibrary
 {
     public class BookDetailsViewModel
     {
-        Book book;
+        public Book Book { get; private set; }
         readonly IResource resource = new RemoteResource();
 
         public BookDetailsViewModel(Book book)
         {
-            this.book = book;
+            this.Book = book;
         }
 
         public String Title {
-            get { return book.title; }
+            get { return Book.title; }
         }
 
         public String Author {
-            get { return book.author; }
+            get { return Book.author; }
         }
 
         public String Categories {
-            get { return book.categories; }
+            get { return Book.categories; }
         }
 
         public String Publisher {
-            get { return book.publisher; }
+            get { return Book.publisher; }
         }
 
         public String LastCheckedOut {
-            get { return book.lastCheckedOut; }
+            get {
+                if (Book.lastCheckedOut?.Length > 0)
+                    return $"Last checked out: {Book.lastCheckedOut}";
+                
+                return null;
+            }
         }
 
         public String LastCheckedOutBy {
-            get { return book.lastCheckedOutBy; }
+            get {
+                if (Book.lastCheckedOutBy?.Length > 0)
+                    return $"By {Book.lastCheckedOutBy}";
+                
+                return null;
+            }
         }
 
         public async Task CheckoutBook(string name)
         {
-            book = await resource.CheckOutBook(book.id, name);
+            Book = await resource.CheckOutBook(Book.id, name);
         }
     }
 }

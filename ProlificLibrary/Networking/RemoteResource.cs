@@ -50,5 +50,20 @@ namespace ProlificLibrary
                 return book;
             }
         }
+
+        public async Task<Book> AddBook(Book book)
+        {
+            using (var client = new HttpClient())
+            {
+                var data = JsonConvert.SerializeObject(book);
+                var content = new StringContent(data, Encoding.UTF8, "application/json");
+
+                var uri = kBaseUrl + "books";
+                var result = await client.PostAsync(uri, content);
+                var response = await result.Content.ReadAsStringAsync();
+                var receivedBook = JsonConvert.DeserializeObject<Book>(response);
+                return receivedBook;
+            }
+        }
     }	
 }

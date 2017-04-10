@@ -1,26 +1,42 @@
-﻿using System;
-
+﻿using Foundation;
+using System;
+using System.Threading.Tasks;
 using UIKit;
 
 namespace ProlificLibrary.iOS
 {
     public partial class EditBookViewController : UIViewController
     {
-        public EditBookViewController() : base("EditBookViewController", null)
-        {
-        }
+        public BookEditViewModel viewModel;
+        public BookListUpdateDelegate didUpdateBook;
+
+        public EditBookViewController (IntPtr handle) : base (handle) { }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
+            submitButton.TouchUpInside += async (sender, e) => await SubmitButtonTappedAsync();
         }
 
-        public override void DidReceiveMemoryWarning()
+        async Task SubmitButtonTappedAsync()
         {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            viewModel.Author = authorTextField.Text;
+            viewModel.Title = titleTextField.Text;
+            viewModel.Categories = categoriesTextField.Text;
+            viewModel.Publisher = publisherTextField.Text;
+
+            try
+            {
+                await viewModel.AddBook();
+                didUpdateBook(viewModel.Book);
+                Alerter.PresentOKAlert("Success!", "Book was added to list", this, (action) => {
+                    NavigationController.PopViewController(true);  
+                });
+            } 
+            catch (Exception e) 
+            {
+                Alerter.PresentOKAlert("Oops", e.Message, this);
+            }
         }
     }
 }
-

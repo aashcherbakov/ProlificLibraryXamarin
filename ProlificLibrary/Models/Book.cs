@@ -12,10 +12,10 @@ namespace ProlificLibrary
         public readonly string lastCheckedOutBy;
         public readonly string url;
 
-		public Book(string id,
-                    string title, 
-		            string author, 
-		            string categories = null, 
+        public Book(string title, 
+                    string author,
+                    string id = null,
+                    string categories = null, 
                     string publisher = null, 
                     string lastCheckedOut = null, 
                     string lastCheckedOutBy = null, 
