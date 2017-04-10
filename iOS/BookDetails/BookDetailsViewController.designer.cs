@@ -24,6 +24,14 @@ namespace ProlificLibrary.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lastCheckedOutByLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lastCheckedOutLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel publisherLabel { get; set; }
 
         [Outlet]
@@ -48,6 +56,16 @@ namespace ProlificLibrary.iOS
             if (checkoutButton != null) {
                 checkoutButton.Dispose ();
                 checkoutButton = null;
+            }
+
+            if (lastCheckedOutByLabel != null) {
+                lastCheckedOutByLabel.Dispose ();
+                lastCheckedOutByLabel = null;
+            }
+
+            if (lastCheckedOutLabel != null) {
+                lastCheckedOutLabel.Dispose ();
+                lastCheckedOutLabel = null;
             }
 
             if (publisherLabel != null) {
