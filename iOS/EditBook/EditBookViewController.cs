@@ -15,14 +15,28 @@ namespace ProlificLibrary.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            SetupDesign();
             submitButton.TouchUpInside += async (sender, e) => await SubmitButtonTappedAsync();
+        }
+
+        // Private functions
+
+        void SetupDesign() 
+        {
+            Title = viewModel.ScreenTitle;
+
+            titleTextField.Text = viewModel.Title;
+            authorTextField.Text = viewModel.Author;
+            categoriesTextField.Text = viewModel.Categories;
+            publisherTextField.Text = viewModel.Publisher;
         }
 
         async Task SubmitButtonTappedAsync()
         {
             UpdateViewModelValues();
 
-            try { await AddBook(); } 
+            try { await SubmitBookChanges(); } 
             catch (Exception e) { Alerter.PresentOKAlert("Oops", e.Message, this); }
         }
 
@@ -34,16 +48,17 @@ namespace ProlificLibrary.iOS
             viewModel.Publisher = publisherTextField.Text;
         }
 
-        async Task AddBook()
+        async Task SubmitBookChanges()
         {
-            await viewModel.AddBook();
+            await viewModel.SubmitChanges();
             didUpdateBook(viewModel.Book);
             PresentSuccessAlert();
         }
 
         void PresentSuccessAlert()
         {
-            Alerter.PresentOKAlert("Success!", "Book was added to list", this, (action) =>
+            Alerter.PresentOKAlert(Constants.SuccessMessages.Success, 
+                                   Constants.SuccessMessages.BookAddedWithSuccess, this, (action) =>
             {
                 NavigationController.PopViewController(true);
             });

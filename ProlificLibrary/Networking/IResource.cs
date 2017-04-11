@@ -12,5 +12,7 @@ namespace ProlificLibrary
         Task<Book> CheckOutBook(string id, string name);
 
         Task<Book> AddBook(Book book);
+
+        Task<Book> UpdateBook(Book book);
 	}
 }

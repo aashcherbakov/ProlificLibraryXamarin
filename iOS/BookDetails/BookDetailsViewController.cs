@@ -8,7 +8,7 @@ namespace ProlificLibrary.iOS
     {
         public BookDetailsViewController(IntPtr handle) : base(handle) { }
         public BookDetailsViewModel viewModel;
-        public BookListUpdateDelegate didUpdateBook;
+        public event BookListUpdateDelegate didUpdateBook;
 
         UITextField field;
 
@@ -16,6 +16,12 @@ namespace ProlificLibrary.iOS
         {
             base.ViewDidLoad();
             SetupDesign();
+
+            didUpdateBook += (book) =>
+            {
+                viewModel.UpdateBook(book);
+                UpdateLabels();
+            };
         }
 
         // Actions
@@ -57,14 +63,26 @@ namespace ProlificLibrary.iOS
         void SetupDesign() 
         {
             Title = "Book Details";
+
+            UpdateLabels();
+            UpdateCheckedOutBy();
+            AddEditBarButton();
+
+            checkoutButton.SetTitle("Checkout Book", UIControlState.Normal);
+        }
+
+        void UpdateLabels()
+        {
             titleLabel.Text = viewModel.Title;
             subtitleLabel.Text = viewModel.Author;
             publisherLabel.Text = viewModel.Publisher;
             categoriesLabel.Text = viewModel.Categories;
+        }
 
-            UpdateCheckedOutBy();
-
-            checkoutButton.SetTitle("Checkout Book", UIControlState.Normal);
+        void AddEditBarButton()
+        {
+            var editButton = new UIBarButtonItem(UIBarButtonSystemItem.Edit, (sender, e) => NavigateToEditBook());
+            NavigationItem.SetRightBarButtonItem(editButton, false);
         }
 
         void UpdateCheckedOutBy()
@@ -85,6 +103,18 @@ namespace ProlificLibrary.iOS
             field.KeyboardType = UIKeyboardType.Default;
             field.ReturnKeyType = UIReturnKeyType.Done;
             field.ClearButtonMode = UITextFieldViewMode.WhileEditing;
+        }
+
+        // Navigation
+
+        void NavigateToEditBook()
+        {
+            var editViewModel = new BookEditViewModel(viewModel.Book);
+            var storyBoard = UIStoryboard.FromName("Main", null);
+            var editViewController = storyBoard.InstantiateViewController("EditBookViewController") as EditBookViewController;
+            editViewController.viewModel = editViewModel;
+            editViewController.didUpdateBook = didUpdateBook;
+            NavigationController.PushViewController(editViewController, true);
         }
     }
 }

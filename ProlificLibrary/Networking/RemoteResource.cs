@@ -65,5 +65,38 @@ namespace ProlificLibrary
                 return receivedBook;
             }
         }
+
+        public async Task<Book> UpdateBook(Book book)
+        {
+            using (var client = new HttpClient())
+            {
+                var updatedFields = UpdateParameters(book);
+
+                var data = JsonConvert.SerializeObject(updatedFields);
+                var content = new StringContent(data, Encoding.UTF8, "application/json");
+
+                var uri = kBaseUrl + "books/" + book.id + "/";
+                var result = await client.PutAsync(uri, content);
+                var response = await result.Content.ReadAsStringAsync();
+                var receivedBook = JsonConvert.DeserializeObject<Book>(response);
+                return receivedBook;
+            }
+        }
+
+        Dictionary<string, string> UpdateParameters(Book book)
+        {
+            var updatedFields = new Dictionary<string, string>() { };
+
+            updatedFields.Add("author", book.Author);
+            updatedFields.Add("title", book.Title);
+
+            if (book.Categories != null)
+                updatedFields.Add("categories", book.Categories);
+
+            if (book.Publisher != null)
+                updatedFields.Add("publisher", book.Publisher);
+
+            return updatedFields;
+        }
     }	
 }

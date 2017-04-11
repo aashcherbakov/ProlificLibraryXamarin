@@ -77,7 +77,7 @@ namespace ProlificLibrary.iOS
             var storyBoard = UIStoryboard.FromName("Main", null);
             var detailsController = storyBoard.InstantiateViewController("BookDetailsViewController") as BookDetailsViewController;
             detailsController.viewModel = detailsViewModel;
-            detailsController.didUpdateBook = DidUpdateBook;
+            detailsController.didUpdateBook += DidUpdateBook;
             NavigationController.PushViewController(detailsController, true);
         }
     }
