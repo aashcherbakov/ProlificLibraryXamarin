@@ -35,6 +35,7 @@
     <Compile Include="Networking\IResource.cs" />
     <Compile Include="ViewModels\BookDetailsViewModel.cs" />
     <Compile Include="ViewModels\BookEditViewModel.cs" />
+    <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />

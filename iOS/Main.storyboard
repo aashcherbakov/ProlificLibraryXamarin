@@ -290,4 +290,7 @@
             <point key="canvasLocation" x="2178.4" y="-549.1754"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+    </simulatedMetricsContainer>
 </document>
