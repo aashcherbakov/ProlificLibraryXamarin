@@ -8,16 +8,16 @@ namespace ProlificLibrary.iOS
         readonly UITableView tableView;
         readonly BookListEmptyView emptyView;
         readonly UIActivityIndicatorView activityIndicator;
+		readonly UIRefreshControl refreshControl;
 
-        public BookListStateFactory(UIView mainView,
-                                    UITableView tableView,
-                                    BookListEmptyView emptyView,
-                                    UIActivityIndicatorView activityIndicator)
+        public BookListStateFactory(UIView mainView,									UITableView tableView,									BookListEmptyView emptyView,									UIActivityIndicatorView activityIndicator,
+		                            UIRefreshControl refreshControl)
         {
             this.emptyView = emptyView;
             this.mainView = mainView;
             this.tableView = tableView;
             this.activityIndicator = activityIndicator;
+			this.refreshControl = refreshControl;
         }
 
         public IBookListState Create(BookListViewModel.State option)
@@ -31,6 +31,8 @@ namespace ProlificLibrary.iOS
                     state = new BookListDataState(); break;
                 case BookListViewModel.State.Loading:
                     state = new BookListLoadingState(); break;
+				case BookListViewModel.State.Refreshing:
+					state = new BookListRefreshState(); break;
                 default:
                     state = new BookListEmptyState(); break;
             }
@@ -45,6 +47,7 @@ namespace ProlificLibrary.iOS
             state.activityIndicator = activityIndicator;
             state.tableView = tableView;
             state.emptyView = emptyView;
+			state.refreshControl = refreshControl;
             return state;
         }
     }

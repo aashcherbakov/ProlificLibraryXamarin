@@ -1,0 +1,386 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETPortable,Version=v4.5,Profile=Profile111": {
+      "Microsoft.Bcl/1.1.10": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.Build": "1.0.14"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/_._": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/_._": {}
+        }
+      },
+      "Microsoft.Bcl.Build/1.0.14": {
+        "type": "package"
+      },
+      "Microsoft.Net.Http/2.2.29": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.10",
+          "Microsoft.Bcl.Build": "1.0.14"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/System.Net.Http.Extensions.dll": {},
+          "lib/portable-net45+win8+wpa81/System.Net.Http.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/System.Net.Http.Extensions.dll": {},
+          "lib/portable-net45+win8+wpa81/System.Net.Http.Primitives.dll": {}
+        }
+      },
+      "MvvmCross.Core/4.4.0": {
+        "type": "package",
+        "dependencies": {
+          "MvvmCross.Platform": "4.4.0"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp80/MvvmCross.Core.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp80/MvvmCross.Core.dll": {}
+        }
+      },
+      "MvvmCross.Platform/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win+wpa81+wp80/MvvmCross.Platform.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+wp80/MvvmCross.Platform.dll": {}
+        }
+      },
+      "Newtonsoft.Json/10.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Bcl/1.1.10": {
+      "sha512": "+tTqoh/M1pyL8El3qLy30EcwnAtyvFoDZJtdG9Cbg/WdFbh4N8kyrq198XHuEL7lnJbeD0DRO8jcX5IIOh05cQ==",
+      "type": "package",
+      "path": "microsoft.bcl/1.1.10",
+      "files": [
+        "License-Stable.rtf",
+        "lib/Xamarin.iOS10/_._",
+        "lib/monoandroid/_._",
+        "lib/monotouch/_._",
+        "lib/net40/System.IO.dll",
+        "lib/net40/System.IO.xml",
+        "lib/net40/System.Runtime.dll",
+        "lib/net40/System.Runtime.xml",
+        "lib/net40/System.Threading.Tasks.dll",
+        "lib/net40/System.Threading.Tasks.xml",
+        "lib/net40/ensureRedirect.xml",
+        "lib/net45/_._",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.IO.dll",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.IO.xml",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Runtime.dll",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Runtime.xml",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Threading.Tasks.dll",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Threading.Tasks.xml",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/ensureRedirect.xml",
+        "lib/portable-net40+sl4+win8+wp8+wpa81/System.IO.dll",
+        "lib/portable-net40+sl4+win8+wp8+wpa81/System.IO.xml",
+        "lib/portable-net40+sl4+win8+wp8+wpa81/System.Runtime.dll",
+        "lib/portable-net40+sl4+win8+wp8+wpa81/System.Runtime.xml",
+        "lib/portable-net40+sl4+win8+wp8+wpa81/System.Threading.Tasks.dll",
+        "lib/portable-net40+sl4+win8+wp8+wpa81/System.Threading.Tasks.xml",
+        "lib/portable-net40+sl4+win8+wp8+wpa81/ensureRedirect.xml",
+        "lib/portable-net40+sl4+win8/System.IO.dll",
+        "lib/portable-net40+sl4+win8/System.IO.xml",
+        "lib/portable-net40+sl4+win8/System.Runtime.dll",
+        "lib/portable-net40+sl4+win8/System.Runtime.xml",
+        "lib/portable-net40+sl4+win8/System.Threading.Tasks.dll",
+        "lib/portable-net40+sl4+win8/System.Threading.Tasks.xml",
+        "lib/portable-net40+sl4+win8/ensureRedirect.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/System.IO.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/System.IO.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/System.Runtime.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/System.Runtime.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/System.Threading.Tasks.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/System.Threading.Tasks.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/ensureRedirect.xml",
+        "lib/portable-net40+win8+wp8+wpa81/System.IO.dll",
+        "lib/portable-net40+win8+wp8+wpa81/System.IO.xml",
+        "lib/portable-net40+win8+wp8+wpa81/System.Runtime.dll",
+        "lib/portable-net40+win8+wp8+wpa81/System.Runtime.xml",
+        "lib/portable-net40+win8+wp8+wpa81/System.Threading.Tasks.dll",
+        "lib/portable-net40+win8+wp8+wpa81/System.Threading.Tasks.xml",
+        "lib/portable-net40+win8+wp8+wpa81/ensureRedirect.xml",
+        "lib/portable-net40+win8/System.IO.dll",
+        "lib/portable-net40+win8/System.IO.xml",
+        "lib/portable-net40+win8/System.Runtime.dll",
+        "lib/portable-net40+win8/System.Runtime.xml",
+        "lib/portable-net40+win8/System.Threading.Tasks.dll",
+        "lib/portable-net40+win8/System.Threading.Tasks.xml",
+        "lib/portable-net40+win8/ensureRedirect.xml",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/portable-net45+win8+wpa81/_._",
+        "lib/portable-net451+win81+wpa81/_._",
+        "lib/portable-net451+win81/_._",
+        "lib/portable-win81+wp81+wpa81/_._",
+        "lib/sl4-windowsphone71/System.IO.dll",
+        "lib/sl4-windowsphone71/System.IO.xml",
+        "lib/sl4-windowsphone71/System.Runtime.dll",
+        "lib/sl4-windowsphone71/System.Runtime.xml",
+        "lib/sl4-windowsphone71/System.Threading.Tasks.dll",
+        "lib/sl4-windowsphone71/System.Threading.Tasks.xml",
+        "lib/sl4-windowsphone71/ensureRedirect.xml",
+        "lib/sl4/System.IO.dll",
+        "lib/sl4/System.IO.xml",
+        "lib/sl4/System.Runtime.dll",
+        "lib/sl4/System.Runtime.xml",
+        "lib/sl4/System.Threading.Tasks.dll",
+        "lib/sl4/System.Threading.Tasks.xml",
+        "lib/sl5/System.IO.dll",
+        "lib/sl5/System.IO.xml",
+        "lib/sl5/System.Runtime.dll",
+        "lib/sl5/System.Runtime.xml",
+        "lib/sl5/System.Threading.Tasks.dll",
+        "lib/sl5/System.Threading.Tasks.xml",
+        "lib/win8/_._",
+        "lib/wp8/_._",
+        "lib/wpa81/_._",
+        "microsoft.bcl.1.1.10.nupkg.sha512",
+        "microsoft.bcl.nuspec"
+      ]
+    },
+    "Microsoft.Bcl.Build/1.0.14": {
+      "sha512": "cDLKSvNvRa519hplsbSoYqO69TjdDIhfjtKUM0g20/nVROoWsGav9KCI9HtnGjLmdV1+TcUUDhbotcllibjPEA==",
+      "type": "package",
+      "path": "microsoft.bcl.build/1.0.14",
+      "files": [
+        "License-Stable.rtf",
+        "content/net40/_._",
+        "content/netcore45/_._",
+        "content/portable-net40+win8+sl4+wp71+wpa81/_._",
+        "content/sl4-windowsphone71/_._",
+        "content/sl4/_._",
+        "microsoft.bcl.build.1.0.14.nupkg.sha512",
+        "microsoft.bcl.build.nuspec",
+        "tools/Install.ps1",
+        "tools/Microsoft.Bcl.Build.Tasks.dll",
+        "tools/Microsoft.Bcl.Build.targets",
+        "tools/Uninstall.ps1"
+      ]
+    },
+    "Microsoft.Net.Http/2.2.29": {
+      "sha512": "fc4CPEewJ30Xgal+fSq1lYIBt582A7eKlAL7O4HXiYAiTp2VTnA4osSvk7T2n8aS4xTCPVJusQk3yKLT0XSpkg==",
+      "type": "package",
+      "path": "microsoft.net.http/2.2.29",
+      "files": [
+        "License-Stable.rtf",
+        "lib/Xamarin.iOS10/System.Net.Http.Extensions.XML",
+        "lib/Xamarin.iOS10/System.Net.Http.Extensions.dll",
+        "lib/Xamarin.iOS10/System.Net.Http.Primitives.dll",
+        "lib/Xamarin.iOS10/System.Net.Http.Primitives.xml",
+        "lib/monoandroid/System.Net.Http.Extensions.XML",
+        "lib/monoandroid/System.Net.Http.Extensions.dll",
+        "lib/monoandroid/System.Net.Http.Primitives.dll",
+        "lib/monoandroid/System.Net.Http.Primitives.xml",
+        "lib/monotouch/System.Net.Http.Extensions.XML",
+        "lib/monotouch/System.Net.Http.Extensions.dll",
+        "lib/monotouch/System.Net.Http.Primitives.dll",
+        "lib/monotouch/System.Net.Http.Primitives.xml",
+        "lib/net40/System.Net.Http.Extensions.XML",
+        "lib/net40/System.Net.Http.Extensions.dll",
+        "lib/net40/System.Net.Http.Primitives.dll",
+        "lib/net40/System.Net.Http.Primitives.xml",
+        "lib/net40/System.Net.Http.WebRequest.dll",
+        "lib/net40/System.Net.Http.WebRequest.xml",
+        "lib/net40/System.Net.Http.dll",
+        "lib/net40/System.Net.Http.xml",
+        "lib/net40/ensureRedirect.xml",
+        "lib/net45/System.Net.Http.Extensions.XML",
+        "lib/net45/System.Net.Http.Extensions.dll",
+        "lib/net45/System.Net.Http.Primitives.dll",
+        "lib/net45/System.Net.Http.Primitives.xml",
+        "lib/net45/ensureRedirect.xml",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Net.Http.Extensions.XML",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Net.Http.Extensions.dll",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Net.Http.Primitives.XML",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Net.Http.Primitives.dll",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Net.Http.dll",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/System.Net.Http.xml",
+        "lib/portable-net40+sl4+win8+wp71+wpa81/ensureRedirect.xml",
+        "lib/portable-net45+win8+wpa81/System.Net.Http.Extensions.XML",
+        "lib/portable-net45+win8+wpa81/System.Net.Http.Extensions.dll",
+        "lib/portable-net45+win8+wpa81/System.Net.Http.Primitives.dll",
+        "lib/portable-net45+win8+wpa81/System.Net.Http.Primitives.xml",
+        "lib/portable-net45+win8+wpa81/ensureRedirect.xml",
+        "lib/portable-net45+win8/System.Net.Http.Extensions.XML",
+        "lib/portable-net45+win8/System.Net.Http.Extensions.dll",
+        "lib/portable-net45+win8/System.Net.Http.Primitives.dll",
+        "lib/portable-net45+win8/System.Net.Http.Primitives.xml",
+        "lib/portable-net45+win8/ensureRedirect.xml",
+        "lib/sl4-windowsphone71/System.Net.Http.Extensions.XML",
+        "lib/sl4-windowsphone71/System.Net.Http.Extensions.dll",
+        "lib/sl4-windowsphone71/System.Net.Http.Primitives.XML",
+        "lib/sl4-windowsphone71/System.Net.Http.Primitives.dll",
+        "lib/sl4-windowsphone71/System.Net.Http.dll",
+        "lib/sl4-windowsphone71/System.Net.Http.xml",
+        "lib/win8/System.Net.Http.Extensions.XML",
+        "lib/win8/System.Net.Http.Extensions.dll",
+        "lib/win8/System.Net.Http.Primitives.dll",
+        "lib/win8/System.Net.Http.Primitives.xml",
+        "lib/wpa81/System.Net.Http.Extensions.XML",
+        "lib/wpa81/System.Net.Http.Extensions.dll",
+        "lib/wpa81/System.Net.Http.Primitives.dll",
+        "lib/wpa81/System.Net.Http.Primitives.xml",
+        "microsoft.net.http.2.2.29.nupkg.sha512",
+        "microsoft.net.http.nuspec"
+      ]
+    },
+    "MvvmCross.Core/4.4.0": {
+      "sha512": "oPRhsHkKdqrY9BYn8k6Uyayip7/zIWKMeDM9sG6bDo8BefCeKkHlXQEPLjirTWIQMluHFzUZHhVAB3CEmwJM9A==",
+      "type": "package",
+      "path": "mvvmcross.core/4.4.0",
+      "files": [
+        "lib/MonoAndroid/MvvmCross.Core.dll",
+        "lib/MonoAndroid/MvvmCross.Droid.Shared.dll",
+        "lib/MonoAndroid/MvvmCross.Droid.dll",
+        "lib/Xamarin.Mac20/MvvmCross.Core.dll",
+        "lib/Xamarin.Mac20/MvvmCross.Mac.dll",
+        "lib/Xamarin.Mac20/MvvmCross.Mac.dll.mdb",
+        "lib/Xamarin.iOS10/MvvmCross.Core.dll",
+        "lib/Xamarin.iOS10/MvvmCross.iOS.dll",
+        "lib/Xamarin.iOS10/MvvmCross.iOS.dll.mdb",
+        "lib/Xamarin.tvOS/MvvmCross.Core.dll",
+        "lib/Xamarin.tvOS/MvvmCross.tvOS.dll",
+        "lib/dotnet/MvvmCross.Core.dll",
+        "lib/net45/MvvmCross.Core.dll",
+        "lib/net45/MvvmCross.Wpf.dll",
+        "lib/netcore45/MvvmCross.Core.dll",
+        "lib/netcore45/MvvmCross.WindowsStore.dll",
+        "lib/netcore45/MvvmCross.WindowsStore.pri",
+        "lib/portable-net45+win+wpa81+wp80/MvvmCross.Core.dll",
+        "lib/portable-win81+wpa81/MvvmCross.Core.dll",
+        "lib/portable-win81+wpa81/MvvmCross.WindowsCommon.dll",
+        "lib/portable-win81+wpa81/MvvmCross.WindowsCommon.pri",
+        "lib/uap/MvvmCross.Core.dll",
+        "lib/uap/MvvmCross.WindowsUWP.dll",
+        "lib/uap/MvvmCross.WindowsUWP.pri",
+        "lib/uap/MvvmCross.WindowsUWP/Properties/MvvmCross.WindowsUWP.rd.xml",
+        "lib/win81/MvvmCross.Core.dll",
+        "lib/win81/MvvmCross.WindowsCommon.dll",
+        "lib/win81/MvvmCross.WindowsCommon.pri",
+        "lib/wpa81/MvvmCross.Core.dll",
+        "lib/wpa81/MvvmCross.WindowsCommon.dll",
+        "lib/wpa81/MvvmCross.WindowsCommon.pri",
+        "mvvmcross.core.4.4.0.nupkg.sha512",
+        "mvvmcross.core.nuspec"
+      ]
+    },
+    "MvvmCross.Platform/4.4.0": {
+      "sha512": "6H9qA5Vx9MzKZ9dVv3gw9QEJmN2pXmlwpTcwRouCGTJ0RdKkDZ5AKka3MboXgxn/P+j2S+PfQ4RjkmJnXCyOZA==",
+      "type": "package",
+      "path": "mvvmcross.platform/4.4.0",
+      "files": [
+        "lib/MonoAndroid/MvvmCross.Platform.Droid.dll",
+        "lib/MonoAndroid/MvvmCross.Platform.dll",
+        "lib/MonoAndroid/MvvmCross.Platform.dll.mdb",
+        "lib/Xamarin.Mac20/MvvmCross.Platform.Mac.dll",
+        "lib/Xamarin.Mac20/MvvmCross.Platform.Mac.dll.mdb",
+        "lib/Xamarin.Mac20/MvvmCross.Platform.dll",
+        "lib/Xamarin.Mac20/MvvmCross.Platform.dll.mdb",
+        "lib/Xamarin.iOS10/MvvmCross.Platform.dll",
+        "lib/Xamarin.iOS10/MvvmCross.Platform.dll.mdb",
+        "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll",
+        "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll.mdb",
+        "lib/Xamarin.tvOS/MvvmCross.Platform.dll",
+        "lib/Xamarin.tvOS/MvvmCross.Platform.dll.mdb",
+        "lib/Xamarin.tvOS/MvvmCross.Platform.tvOS.dll",
+        "lib/dotnet/MvvmCross.Platform.dll",
+        "lib/dotnet/MvvmCross.Platform.dll.mdb",
+        "lib/net45/MvvmCross.Platform.Wpf.dll",
+        "lib/net45/MvvmCross.Platform.dll",
+        "lib/net45/MvvmCross.Platform.dll.mdb",
+        "lib/netcore45/MvvmCross.Platform.WindowsStore.dll",
+        "lib/netcore45/MvvmCross.Platform.WindowsStore.pri",
+        "lib/netcore45/MvvmCross.Platform.dll",
+        "lib/netcore45/MvvmCross.Platform.dll.mdb",
+        "lib/portable-net45+win+wpa81+wp80/MvvmCross.Platform.dll",
+        "lib/portable-net45+win+wpa81+wp80/MvvmCross.Platform.dll.mdb",
+        "lib/portable-win81+wpa81/MvvmCross.Platform.WindowsCommon.dll",
+        "lib/portable-win81+wpa81/MvvmCross.Platform.WindowsCommon.pri",
+        "lib/portable-win81+wpa81/MvvmCross.Platform.dll",
+        "lib/portable-win81+wpa81/MvvmCross.Platform.dll.mdb",
+        "lib/win81/MvvmCross.Platform.WindowsCommon.dll",
+        "lib/win81/MvvmCross.Platform.WindowsCommon.pri",
+        "lib/win81/MvvmCross.Platform.dll",
+        "lib/win81/MvvmCross.Platform.dll.mdb",
+        "lib/wpa81/MvvmCross.Platform.WindowsCommon.dll",
+        "lib/wpa81/MvvmCross.Platform.WindowsCommon.pri",
+        "lib/wpa81/MvvmCross.Platform.dll",
+        "lib/wpa81/MvvmCross.Platform.dll.mdb",
+        "mvvmcross.platform.4.4.0.nupkg.sha512",
+        "mvvmcross.platform.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/10.0.1": {
+      "sha512": "ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
+      "type": "package",
+      "path": "newtonsoft.json/10.0.1",
+      "files": [
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Microsoft.Net.Http >= 2.2.29",
+      "MvvmCross.Core >= 4.4.0",
+      "Newtonsoft.Json >= 10.0.1"
+    ],
+    ".NETPortable,Version=v4.5,Profile=Profile111": []
+  },
+  "packageFolders": {
+    "/Users/a_shcherbakov/.nuget/packages/": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "/Users/a_shcherbakov/Developer/Xamarin/ProlificLibraryXamarin/ProlificLibrary/ProlificLibrary.csproj",
+      "projectName": "ProlificLibrary",
+      "projectPath": "/Users/a_shcherbakov/Developer/Xamarin/ProlificLibraryXamarin/ProlificLibrary/ProlificLibrary.csproj",
+      "projectJsonPath": "/Users/a_shcherbakov/Developer/Xamarin/ProlificLibraryXamarin/ProlificLibrary/project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "dependencies": {
+      "MvvmCross.Core": "4.4.0",
+      "Newtonsoft.Json": "10.0.1",
+      "Microsoft.Net.Http": {
+        "target": "Package",
+        "version": "[2.2.29, )"
+      }
+    },
+    "frameworks": {
+      "portable45-net45+win8+wpa81": {}
+    }
+  }
+}

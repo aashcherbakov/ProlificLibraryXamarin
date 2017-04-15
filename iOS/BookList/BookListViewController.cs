@@ -12,32 +12,39 @@ namespace ProlificLibrary.iOS
 
         BookListViewModel viewModel;
         BookListTableSource tableSource;
-        BookListEmptyView emptyView;
+		BookListEmptyView emptyView;
+		UIRefreshControl refreshControl;
 
-        public BookListViewController(IntPtr handle) : base(handle) { }
+        public BookListViewController(IntPtr handle) : base(handle) {}
 
-        public async override void ViewDidLoad()
-        {
-            base.ViewDidLoad();
-            var factory = new BookListStateFactory(View, tableView, emptyView, activityIndicator);
-            var resource = new RemoteResource();
-            viewModel = new BookListViewModel(resource, factory);
+		public async override void ViewDidLoad()
+		{
+			base.ViewDidLoad();
 
-            SetupDesign();
-            await LoadData();
-        }
+			SetupRefreshControl();
+
+			var factory = new BookListStateFactory(View, tableView, emptyView, activityIndicator, refreshControl);
+			var resource = new RemoteResource();
+			viewModel = new BookListViewModel(resource, factory);
+
+			SetupDesign();
+			await LoadData();
+		}
 
         // Plus button tapped
         partial void UIBarButtonItemLRb1vgKg_Activated(UIBarButtonItem sender)
         {
-            NavigateToEditBook();
+			NavigateToAddBook();
         }
 
         void SetupDesign()
         {
             Title = viewModel.Title;
-            tableSource = new BookListTableSource(viewModel) { selectionDelegate = NavigaeteToBookDetails };
-
+            tableSource = new BookListTableSource(viewModel) { 
+				selectionDelegate = NavigaeteToBookDetails,
+				editingDelegate = OnEditing,
+				deletingDelegate = OnDeleting
+			};
             emptyView = null;
             activityIndicator.HidesWhenStopped = true;
 
@@ -46,6 +53,14 @@ namespace ProlificLibrary.iOS
             tableView.EstimatedRowHeight = kEstimatedCellHeight;
             tableView.Source = tableSource;
         }
+
+		void SetupRefreshControl()
+		{
+			var control = new UIRefreshControl();
+			control.ValueChanged += async (sender, e) => await viewModel.RefreshBooks();
+			refreshControl = control;
+			tableView.AddSubview(refreshControl);
+		}
 
         async Task LoadData()
         {
@@ -59,11 +74,22 @@ namespace ProlificLibrary.iOS
             tableView.ReloadData();
         }
 
+		void OnEditing(Book book)
+		{
+			if (book != null)
+				NavigateToAddBook(book);
+		}
+
+		void OnDeleting(Book book)
+		{
+			
+		}
+
         // Navigation
 
-        void NavigateToEditBook()
+		void NavigateToAddBook(Book book = null)
         {
-            var editViewModel = new BookEditViewModel();
+			var editViewModel = new BookEditViewModel(book);
             var storyBoard = UIStoryboard.FromName("Main", null);
             var editViewController = storyBoard.InstantiateViewController("EditBookViewController") as EditBookViewController;
             editViewController.viewModel = editViewModel;

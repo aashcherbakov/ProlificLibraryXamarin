@@ -9,6 +9,7 @@ namespace ProlificLibrary.iOS
 		public UITableView tableView;
 		public BookListEmptyView emptyView;
 		public UIActivityIndicatorView activityIndicator;
+		public UIRefreshControl refreshControl;
 
 		/// Manipulates visibility of key views and controlls activity indicator.
 		public abstract void UpdateDesign();
@@ -38,7 +39,9 @@ namespace ProlificLibrary.iOS
 			emptyView = null;
 
 			activityIndicator.StopAnimating();
-            tableView.ReloadData();
+
+			refreshControl.EndRefreshing();
+			tableView.ReloadData();
 		}
 	}
 
@@ -48,5 +51,10 @@ namespace ProlificLibrary.iOS
 			tableView.Hidden = true;
 			activityIndicator.StartAnimating();
 		}
+	}
+
+	public class BookListRefreshState : BookListState
+	{
+		public override void UpdateDesign()		{			refreshControl.BeginRefreshing();		}
 	}
 }

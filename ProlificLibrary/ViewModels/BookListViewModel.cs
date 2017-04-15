@@ -22,7 +22,8 @@ namespace ProlificLibrary
         {
             Default,
             Empty,
-            Loading
+            Loading,
+			Refreshing
         }
 
         readonly IResource resource;
@@ -46,11 +47,27 @@ namespace ProlificLibrary
                 Books = new List<Book>(booksArray);
                 UpdateState(State.Default);
             } 
-            catch
+			catch 
             {
-                UpdateState(State.Empty);
-                throw new Exception("We could not load books, sorry :(");
+				UpdateState(State.Empty);
+				throw new Exception("We could not load books, sorry :(");
             }
+		}
+
+		public async Task RefreshBooks()
+		{
+			UpdateState(State.Refreshing);
+			try
+			{
+				var booksArray = await resource.GetBooks();
+				Books = new List<Book>(booksArray);
+				UpdateState(State.Default);
+			}
+			catch
+			{
+				UpdateState(State.Default);
+				throw new Exception("We could not load books, sorry :(");
+			}
 		}
 
         public async Task<Book> GetBook(string id) 
@@ -75,10 +92,6 @@ namespace ProlificLibrary
             state.UpdateDesign();
         }
 
-        public static implicit operator WeakReference<object>(BookListViewModel v)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 
