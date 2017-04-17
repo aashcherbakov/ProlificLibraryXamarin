@@ -13,18 +13,17 @@ namespace ProlificLibrary.iOS
         BookListViewModel viewModel;
         BookListTableSource tableSource;
         BookListEmptyView emptyView;
-        BookListState state;
 
         public BookListViewController(IntPtr handle) : base(handle) { }
 
         public async override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            viewModel = new BookListViewModel(new RemoteResource());
+            var factory = new BookListStateFactory(View, tableView, emptyView, activityIndicator);
+            var resource = new RemoteResource();
+            viewModel = new BookListViewModel(resource, factory);
 
             SetupDesign();
-            UpdateState(null);
             await LoadData();
         }
 
@@ -36,8 +35,9 @@ namespace ProlificLibrary.iOS
 
         void SetupDesign()
         {
-            tableSource = new BookListTableSource();
-            tableSource.selectionDelegate = NavigaeteToBookDetails;
+            Title = viewModel.Title;
+            tableSource = new BookListTableSource(viewModel) { selectionDelegate = NavigaeteToBookDetails };
+
             emptyView = null;
             activityIndicator.HidesWhenStopped = true;
 
@@ -47,47 +47,15 @@ namespace ProlificLibrary.iOS
             tableView.Source = tableSource;
         }
 
-        void UpdateState(Book[] books)
-        {
-            state = BookListStateFactory.Create(books);
-            state.emptyView = emptyView;
-            state.tableView = tableView;
-            state.mainView = View;
-            state.activityIndicator = activityIndicator;
-            state.UpdateDesign();
-        }
-
         async Task LoadData()
         {
-            try
-            {
-                var books = await viewModel.LoadBooks();
-                UpdateDesign(books);
-            }
-            catch (Exception exception)
-            {
-                PresentAlert(exception);
-            }
-        }
-
-        void PresentAlert(Exception exception)
-        {
-            Alerter.PresentOKAlert("Oops", exception.Message, this);
-            UpdateState(new Book[] { });
-        }
-
-        void UpdateDesign(Book[] books)
-        {
-            tableSource.UpdateWithBooks(books);
-            tableView.ReloadData();
-            UpdateState(books);
-            state.UpdateDesign();
+            try { await viewModel.LoadBooks(); }
+            catch (Exception exception) { Alerter.PresentOKAlert("Oops", exception.Message, this); }
         }
 
         void DidUpdateBook(Book book)
         {
             viewModel.UpdateBookList(book);
-            tableSource.UpdateWithBooks(viewModel.Books.ToArray());
             tableView.ReloadData();
         }
 

@@ -20,23 +20,33 @@ namespace ProlificLibrary.iOS
 
         async Task SubmitButtonTappedAsync()
         {
+            UpdateViewModelValues();
+
+            try { await AddBook(); } 
+            catch (Exception e) { Alerter.PresentOKAlert("Oops", e.Message, this); }
+        }
+
+        void UpdateViewModelValues()
+        {
             viewModel.Author = authorTextField.Text;
             viewModel.Title = titleTextField.Text;
             viewModel.Categories = categoriesTextField.Text;
             viewModel.Publisher = publisherTextField.Text;
+        }
 
-            try
+        async Task AddBook()
+        {
+            await viewModel.AddBook();
+            didUpdateBook(viewModel.Book);
+            PresentSuccessAlert();
+        }
+
+        void PresentSuccessAlert()
+        {
+            Alerter.PresentOKAlert("Success!", "Book was added to list", this, (action) =>
             {
-                await viewModel.AddBook();
-                didUpdateBook(viewModel.Book);
-                Alerter.PresentOKAlert("Success!", "Book was added to list", this, (action) => {
-                    NavigationController.PopViewController(true);  
-                });
-            } 
-            catch (Exception e) 
-            {
-                Alerter.PresentOKAlert("Oops", e.Message, this);
-            }
+                NavigationController.PopViewController(true);
+            });
         }
     }
 }

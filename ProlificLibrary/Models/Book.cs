@@ -30,5 +30,5 @@ namespace ProlificLibrary
             this.lastCheckedOutBy = lastCheckedOutBy;
             this.url = url;
         }
-	}
+    }
 }

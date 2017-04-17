@@ -15,7 +15,7 @@ namespace ProlificLibrary
 
         public BookEditViewModel(Book book = null)
         {
-            this.Book = book;
+            Book = book;
         }
 
         public async Task AddBook() 

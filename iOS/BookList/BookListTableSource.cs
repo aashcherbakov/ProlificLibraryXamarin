@@ -10,27 +10,25 @@ namespace ProlificLibrary.iOS
 
 	public class BookListTableSource: UITableViewSource
 	{
-        public BookListTableSource() { } // Constructor
 
         public const string kCellIdentifier = "BookListTableViewCell";
         public BookSelectionDelegate selectionDelegate;
+        readonly BookListViewModel viewModel;
 
-        private Book[] books = new Book[] { };
-
-		public void UpdateWithBooks(Book[] newBooks) {
-			books = newBooks;
-		}
+        public BookListTableSource(BookListViewModel viewModel) {
+            this.viewModel = viewModel;
+        } 
 
         // Overridden functions 
 
-		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath) {
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath) {
 			var cell = tableView.DequeueReusableCell(kCellIdentifier, indexPath) as BookListTableViewCell;
 			SetupCell(cell, indexPath);
 			return cell;
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section) {
-			return books.Length;
+            return viewModel.Books?.Count ?? 0;
 		}
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
@@ -39,19 +37,20 @@ namespace ProlificLibrary.iOS
             selectionDelegate(book);
         }
 
-		// Private functions
+        // Private functions
 
-		private void SetupCell(BookListTableViewCell cell, NSIndexPath indexPath) {
-			var book = GetBookFromArray(indexPath);
-			cell.Setup(book);
-		}
+        void SetupCell(BookListTableViewCell cell, NSIndexPath indexPath)
+        {
+            var book = GetBookFromArray(indexPath);
+            cell.Setup(book);
+        }
 
-        private Book GetBookFromArray(NSIndexPath indexPath) {
-			if (books.Length < indexPath.Row) {
-				return null;
-			}
-
-			return books[indexPath.Row];
-		}
-	}
+        Book GetBookFromArray(NSIndexPath indexPath)
+        {
+            if (viewModel.Books.Count < indexPath.Row)
+                return null;
+         
+            return viewModel.Books[indexPath.Row];
+        }
+    }
 }
