@@ -29,9 +29,7 @@ namespace ProlificLibrary
             using (var client = new HttpClient())
             {
                 var result = await client.GetAsync(kBaseUrl + "books/" + id);
-                var content = await result.Content.ReadAsStringAsync();
-                var book = JsonConvert.DeserializeObject<Book>(content);
-                return book;
+                return await DeserializeResult(result);
             }
         }
 
@@ -45,9 +43,7 @@ namespace ProlificLibrary
 
                 var uri = kBaseUrl + "books/" + id + "/";
                 var result = await client.PutAsync(uri, content);
-                var response = await result.Content.ReadAsStringAsync();
-                var book = JsonConvert.DeserializeObject<Book>(response);
-                return book;
+                return await DeserializeResult(result);
             }
         }
 
@@ -60,9 +56,7 @@ namespace ProlificLibrary
 
                 var uri = kBaseUrl + "books";
                 var result = await client.PostAsync(uri, content);
-                var response = await result.Content.ReadAsStringAsync();
-                var receivedBook = JsonConvert.DeserializeObject<Book>(response);
-                return receivedBook;
+                return await DeserializeResult(result);
             }
         }
 
@@ -77,11 +71,27 @@ namespace ProlificLibrary
 
                 var uri = kBaseUrl + "books/" + book.id + "/";
                 var result = await client.PutAsync(uri, content);
-                var response = await result.Content.ReadAsStringAsync();
-                var receivedBook = JsonConvert.DeserializeObject<Book>(response);
-                return receivedBook;
+				return await DeserializeResult(result);
             }
         }
+
+		public async Task<Book> DeleteBook(Book book)
+		{
+			using (var client = new HttpClient())
+			{
+				var result = await client.DeleteAsync(kBaseUrl + "books/" + book.id);
+				return await DeserializeResult(result);
+			}
+		}
+
+		// Private 
+
+		async Task<Book> DeserializeResult(HttpResponseMessage result)
+		{
+			var content = await result.Content.ReadAsStringAsync();
+			var book = JsonConvert.DeserializeObject<Book>(content);
+			return book;
+		}
 
         Dictionary<string, string> UpdateParameters(Book book)
         {
@@ -93,10 +103,5 @@ namespace ProlificLibrary
             if (book.Categories != null)
                 updatedFields.Add("categories", book.Categories);
 
-            if (book.Publisher != null)
-                updatedFields.Add("publisher", book.Publisher);
-
-            return updatedFields;
-        }
-    }	
+            if (book.Publisher != null)                updatedFields.Add("publisher", book.Publisher);            return updatedFields;        }	}	
 }

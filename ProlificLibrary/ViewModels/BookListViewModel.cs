@@ -84,15 +84,25 @@ namespace ProlificLibrary
                 Books.Add(book);
         }
 
-        // Private functions
+		public async Task DeleteBook(Book book)
+		{
+			var deletedBook = await resource.DeleteBook(book);
+			DeleteBookLocally(deletedBook);
+		}
+
+		// Private functions
+
+		void DeleteBookLocally(Book book)
+		{
+			var index = Books.FindIndex(x => x.id == book.id);
+			if (index != -1)
+				Books.Remove(book);
+		}
 
         void UpdateState(State newState)
         {
             state = stateFactory.Create(newState);
             state.UpdateDesign();
         }
-
     }
-
-
 }

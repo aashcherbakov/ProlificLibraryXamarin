@@ -14,5 +14,7 @@ namespace ProlificLibrary
         Task<Book> AddBook(Book book);
 
         Task<Book> UpdateBook(Book book);
+
+		Task<Book> DeleteBook(Book book);
 	}
 }
