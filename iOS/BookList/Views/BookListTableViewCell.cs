@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Foundation;
 using UIKit;
@@ -19,8 +19,8 @@ namespace ProlificLibrary.iOS
 		}
 
 		public void Setup(Book book) {
-			titleLabel.Text = book?.title;
-			subtitleLabel.Text = book?.author;
+			titleLabel.Text = book?.Title;
+			subtitleLabel.Text = book?.Author;
 		}
 	}
 }

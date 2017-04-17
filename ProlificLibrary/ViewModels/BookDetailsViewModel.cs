@@ -10,23 +10,28 @@ namespace ProlificLibrary
 
         public BookDetailsViewModel(Book book)
         {
-            this.Book = book;
+            Book = book;
+        }
+
+        public void UpdateBook(Book book)
+        {
+            Book = book;
         }
 
         public String Title {
-            get { return Book.title; }
+            get { return Book.Title; }
         }
 
         public String Author {
-            get { return Book.author; }
+            get { return Book.Author; }
         }
 
         public String Categories {
-            get { return Book.categories; }
+            get { return Book.Categories; }
         }
 
         public String Publisher {
-            get { return Book.publisher; }
+            get { return Book.Publisher; }
         }
 
         public String LastCheckedOut {
