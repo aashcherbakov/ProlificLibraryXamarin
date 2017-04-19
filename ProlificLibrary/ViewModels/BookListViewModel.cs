@@ -86,8 +86,8 @@ namespace ProlificLibrary
 
 		public async Task DeleteBook(Book book)
 		{
-			var deletedBook = await resource.DeleteBook(book);
-			DeleteBookLocally(deletedBook);
+            await resource.DeleteBook(book); 
+            DeleteBookLocally(book);
 		}
 
 		// Private functions

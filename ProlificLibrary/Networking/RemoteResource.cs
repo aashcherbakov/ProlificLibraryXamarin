@@ -79,7 +79,8 @@ namespace ProlificLibrary
 		{
 			using (var client = new HttpClient())
 			{
-				var result = await client.DeleteAsync(kBaseUrl + "books/" + book.id);
+                var url = kBaseUrl + "books/" + book.id;
+                var result = await client.DeleteAsync(url);
 				return await DeserializeResult(result);
 			}
 		}

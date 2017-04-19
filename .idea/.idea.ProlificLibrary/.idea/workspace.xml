@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f166ebf8-9646-490e-bfd0-98d3542fc300" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iOS/BookList/BookListTableSource.cs" afterPath="$PROJECT_DIR$/iOS/BookList/BookListTableSource.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iOS/BookList/BookListViewController.cs" afterPath="$PROJECT_DIR$/iOS/BookList/BookListViewController.cs" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="EditBookViewController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/iOS/EditBook/EditBookViewController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1492432210000" expanded="true" signature="6:74" ph="..." />
+                <marker date="1492432210000" expanded="true" signature="174:1947" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="396:572" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="631:919" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="965:1156" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="1194:1438" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="1478:1621" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="1657:1941" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="1839:1929" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookListTableSource.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/iOS/BookList/BookListTableSource.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+              <folding>
+                <marker date="1492521613000" expanded="true" signature="6:44" ph="..." />
+                <marker date="1492521613000" expanded="true" signature="84:2512" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="306:2510" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="643:694" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="825:975" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="1051:1104" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="1192:1301" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="1407:1839" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="1911:1988" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="2030:2108" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="2183:2285" ph="{...}" />
+                <marker date="1492521613000" expanded="true" signature="2339:2504" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Book.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProlificLibrary/Models/Book.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1492432210000" expanded="true" signature="39:1488" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="60:1486" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="780:1064" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="1111:1158" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="1207:1256" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="1313:1370" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="1425:1480" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Droid/MainActivity.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <folding>
+                <marker date="1492432045000" expanded="false" signature="6:58" ph="..." />
+                <marker date="1492432045000" expanded="true" signature="91:652" ph="{...}" />
+                <marker date="1492432045000" expanded="true" signature="214:650" ph="{...}" />
+                <marker date="1492432045000" expanded="true" signature="298:647" ph="{...}" />
+                <marker date="1492432045000" expanded="true" signature="435:510" ph="/* Get our button from the layout resource, ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Droid/Properties/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AboutAssets.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Droid/Assets/AboutAssets.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssemblyInfo.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Droid/Properties/AssemblyInfo.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+              <folding>
+                <marker date="1492432045000" expanded="false" signature="6:82" ph="..." />
+                <marker date="1492432045000" expanded="true" signature="84:214" ph="/* Information about this assembly is defined by the following attributes. ... */" />
+                <marker date="1492432045000" expanded="true" signature="531:755" ph="/* The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;. ... */" />
+                <marker date="1492432045000" expanded="true" signature="795:1029" ph="/* The following attributes are used to specify the signing key for the assembly, ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProlificLibrary/Constants.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1492432210000" expanded="true" signature="39:530" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="75:528" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="124:234" ph="{...}" />
+                <marker date="1492432210000" expanded="true" signature="274:522" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditBookViewController.designer.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/iOS/EditBook/EditBookViewController.designer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1492432045000" expanded="true" signature="0:200" ph="/* WARNING ... */" />
+                <marker date="1492432045000" expanded="false" signature="207:276" ph="..." />
+                <marker date="1492432045000" expanded="true" signature="392:1791" ph="{...}" />
+                <marker date="1492432045000" expanded="true" signature="1047:1785" ph="{...}" />
+                <marker date="1492432045000" expanded="true" signature="1099:1198" ph="{...}" />
+                <marker date="1492432045000" expanded="true" signature="1245:1352" ph="{...}" />
+                <marker date="1492432045000" expanded="true" signature="1398:1503" ph="{...}" />
+                <marker date="1492432045000" expanded="true" signature="1543:1636" ph="{...}" />
+                <marker date="1492432045000" expanded="true" signature="1678:1775" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/iOS/BookList/BookListTableSource.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1440" />
+    <option name="y" value="-277" />
+    <option name="width" value="1920" />
+    <option name="height" value="1177" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProlificLibrary (4 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Xamarin.Android.Android Default">
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="XamarinAndroidProject" factoryName="Xamarin.Android">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="DEPLOY_BEHAVIOUR_NAME" value="Default" />
+      <option name="DEPLOY_TARGET_BEHAVIOUR_NAME" value="Ask" />
+      <option name="DEFAULT_DEVICE_TO_RUN" value="" />
+      <option name="DEFAULT_EMULATOR_TO_RUN" value="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Android Default" type="XamarinAndroidProject" factoryName="Xamarin.Android">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="DEPLOY_BEHAVIOUR_NAME" value="Default" />
+      <option name="DEPLOY_TARGET_BEHAVIOUR_NAME" value="Ask" />
+      <option name="DEFAULT_DEVICE_TO_RUN" value="" />
+      <option name="DEFAULT_EMULATOR_TO_RUN" value="" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+      <item index="1" class="java.lang.String" itemvalue="Xamarin.Android.Android Default" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f166ebf8-9646-490e-bfd0-98d3542fc300" name="Default" comment="" />
+      <created>1492520727201</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1492520727201</updated>
+      <workItem from="1492520729650" duration="976000" />
+      <workItem from="1492608139361" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="997000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1440" y="-277" width="1920" height="1177" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20260416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/iOS/EditBook/EditBookViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1492432210000" expanded="true" signature="6:74" ph="..." />
+            <marker date="1492432210000" expanded="true" signature="174:1947" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="396:572" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="631:919" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="965:1156" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1194:1438" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1478:1621" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1657:1941" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1839:1929" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProlificLibrary/Models/Book.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1492432210000" expanded="true" signature="39:1488" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="60:1486" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="780:1064" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1111:1158" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1207:1256" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1313:1370" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1425:1480" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Droid/MainActivity.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <marker date="1492432045000" expanded="false" signature="6:58" ph="..." />
+            <marker date="1492432045000" expanded="true" signature="91:652" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="214:650" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="298:647" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="435:510" ph="/* Get our button from the layout resource, ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Droid/Properties/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Droid/Assets/AboutAssets.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Droid/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <marker date="1492432045000" expanded="false" signature="6:82" ph="..." />
+            <marker date="1492432045000" expanded="true" signature="84:214" ph="/* Information about this assembly is defined by the following attributes. ... */" />
+            <marker date="1492432045000" expanded="true" signature="531:755" ph="/* The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;. ... */" />
+            <marker date="1492432045000" expanded="true" signature="795:1029" ph="/* The following attributes are used to specify the signing key for the assembly, ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProlificLibrary/Constants.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1492432210000" expanded="true" signature="39:530" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="75:528" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="124:234" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="274:522" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iOS/EditBook/EditBookViewController.designer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1492432045000" expanded="true" signature="0:200" ph="/* WARNING ... */" />
+            <marker date="1492432045000" expanded="false" signature="207:276" ph="..." />
+            <marker date="1492432045000" expanded="true" signature="392:1791" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1047:1785" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1099:1198" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1245:1352" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1398:1503" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1543:1636" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1678:1775" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iOS/BookList/BookListTableSource.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding>
+            <marker date="1492521613000" expanded="true" signature="6:44" ph="..." />
+            <marker date="1492521613000" expanded="true" signature="84:2512" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="306:2510" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="643:694" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="825:975" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="1051:1104" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="1192:1301" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="1407:1839" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="1911:1988" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="2030:2108" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="2183:2285" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="2339:2504" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProlificLibrary/Models/Book.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1492432210000" expanded="true" signature="39:1488" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="60:1486" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="780:1064" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1111:1158" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1207:1256" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1313:1370" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1425:1480" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Droid/MainActivity.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <marker date="1492432045000" expanded="false" signature="6:58" ph="..." />
+            <marker date="1492432045000" expanded="true" signature="91:652" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="214:650" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="298:647" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="435:510" ph="/* Get our button from the layout resource, ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Droid/Properties/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Droid/Assets/AboutAssets.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Droid/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <marker date="1492432045000" expanded="false" signature="6:82" ph="..." />
+            <marker date="1492432045000" expanded="true" signature="84:214" ph="/* Information about this assembly is defined by the following attributes. ... */" />
+            <marker date="1492432045000" expanded="true" signature="531:755" ph="/* The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;. ... */" />
+            <marker date="1492432045000" expanded="true" signature="795:1029" ph="/* The following attributes are used to specify the signing key for the assembly, ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProlificLibrary/Constants.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1492432210000" expanded="true" signature="39:530" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="75:528" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="124:234" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="274:522" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iOS/EditBook/EditBookViewController.designer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1492432045000" expanded="true" signature="0:200" ph="/* WARNING ... */" />
+            <marker date="1492432045000" expanded="false" signature="207:276" ph="..." />
+            <marker date="1492432045000" expanded="true" signature="392:1791" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1047:1785" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1099:1198" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1245:1352" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1398:1503" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1543:1636" ph="{...}" />
+            <marker date="1492432045000" expanded="true" signature="1678:1775" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iOS/EditBook/EditBookViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1492432210000" expanded="true" signature="6:74" ph="..." />
+            <marker date="1492432210000" expanded="true" signature="174:1947" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="396:572" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="631:919" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="965:1156" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1194:1438" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1478:1621" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1657:1941" ph="{...}" />
+            <marker date="1492432210000" expanded="true" signature="1839:1929" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iOS/BookList/BookListTableSource.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding>
+            <marker date="1492521613000" expanded="true" signature="6:44" ph="..." />
+            <marker date="1492521613000" expanded="true" signature="84:2512" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="306:2510" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="643:694" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="825:975" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="1051:1104" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="1192:1301" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="1407:1839" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="1911:1988" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="2030:2108" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="2183:2285" ph="{...}" />
+            <marker date="1492521613000" expanded="true" signature="2339:2504" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
