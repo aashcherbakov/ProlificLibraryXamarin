@@ -4,8 +4,6 @@ using System.Threading.Tasks;
 
 namespace ProlificLibrary
 {
-    
-
     public interface IBookListState
     {
         void UpdateDesign();

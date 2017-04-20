@@ -6,7 +6,7 @@ namespace ProlificLibrary.iOS
 {
     public delegate void BookListUpdateDelegate(Book book);
 
-    public partial class BookListViewController : UIViewController
+    public partial class BookListViewController : BaseViewController
     {
         const float kEstimatedCellHeight = 40.0f;
 
@@ -118,12 +118,16 @@ namespace ProlificLibrary.iOS
 
         void NavigaeteToBookDetails(Book book)
         {
-            var detailsViewModel = new BookDetailsViewModel(book);
-            var storyBoard = UIStoryboard.FromName("Main", null);
-            var detailsController = storyBoard.InstantiateViewController("BookDetailsViewController") as BookDetailsViewController;
-            detailsController.viewModel = detailsViewModel;
-            detailsController.didUpdateBook += DidUpdateBook;
-            NavigationController.PushViewController(detailsController, true);
+            var router = new Router();
+            var parameters = new BookDetailParameters(book);
+            router.NavigateTo(Destination.BookDetails, 
+                              this, 
+                              parameters,
+                              NavigationType.Push);
+
+            //detailsController.viewModel = detailsViewModel;
+            //detailsController.didUpdateBook += DidUpdateBook;
+            //NavigationController.PushViewController(detailsController, true);
         }
     }
 }

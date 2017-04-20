@@ -104,6 +104,7 @@
     <Folder Include="BookDetails\" />
     <Folder Include="BookDetails\Views\" />
     <Folder Include="EditBook\" />
+    <Folder Include="Router\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -142,7 +143,11 @@
       <DependentUpon>EditBookViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="BookList\State\BookListStateFactory.cs" />
-    <Compile Include="Utility\Router.cs" />
+    <Compile Include="Router\Router.cs" />
+    <Compile Include="Router\ControllerFactory.cs" />
+    <Compile Include="Router\BaseViewController.cs" />
+    <Compile Include="Router\IBuilder.cs" />
+    <Compile Include="BookDetails\BookDetailsBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

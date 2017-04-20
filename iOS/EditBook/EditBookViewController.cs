@@ -5,7 +5,7 @@ using UIKit;
 
 namespace ProlificLibrary.iOS
 {
-    public partial class EditBookViewController : UIViewController
+    public partial class EditBookViewController : BaseViewController
     {
         public BookEditViewModel viewModel;
         public BookListUpdateDelegate didUpdateBook;

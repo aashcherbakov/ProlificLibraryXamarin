@@ -5,34 +5,31 @@ namespace ProlificLibrary
 {
     public class BookDetailsViewModel
     {
+        // Dependencies
         public Book Book { get; private set; }
-        readonly IResource resource = new RemoteResource();
 
+        IRouter Router;
+        IResource Resource;
+
+        // Getters
+        public String Title => Book.Title;
+        public String Author => Book.Author;
+        public String Categories => Book.Categories;
+        public String Publisher => Book.Publisher;
+
+        // Constructor
         public BookDetailsViewModel(Book book)
         {
             Book = book;
         }
 
-        public void UpdateBook(Book book)
+        public void InjectDependencies(IRouter router, IResource resource)
         {
-            Book = book;
+            Router = router;
+            Resource = resource;
         }
 
-        public String Title {
-            get { return Book.Title; }
-        }
-
-        public String Author {
-            get { return Book.Author; }
-        }
-
-        public String Categories {
-            get { return Book.Categories; }
-        }
-
-        public String Publisher {
-            get { return Book.Publisher; }
-        }
+        public void UpdateBook(Book book) { Book = book; }
 
         public String LastCheckedOut {
             get {
@@ -54,7 +51,7 @@ namespace ProlificLibrary
 
         public async Task CheckoutBook(string name)
         {
-            Book = await resource.CheckOutBook(Book.id, name);
+            Book = await Resource.CheckOutBook(Book.id, name);
         }
     }
 }

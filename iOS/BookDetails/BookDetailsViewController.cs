@@ -4,7 +4,7 @@ using UIKit;
 
 namespace ProlificLibrary.iOS
 {
-    public partial class BookDetailsViewController : UIViewController
+    public partial class BookDetailsViewController : BaseViewController
     {
         public BookDetailsViewController(IntPtr handle) : base(handle) { }
         public BookDetailsViewModel viewModel;
