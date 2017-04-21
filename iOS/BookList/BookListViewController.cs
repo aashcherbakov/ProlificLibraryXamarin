@@ -82,7 +82,26 @@ namespace ProlificLibrary.iOS
 
 		void OnDeleting(Book book)
 		{
-			
+			if (book != null) 
+				Task.Run(async () => await DeleteBook(book));
+		}
+
+		async Task DeleteBook(Book book)
+		{
+			try {
+				await viewModel.DeleteBook(book);
+				InvokeOnMainThread(() => {
+					Alerter.PresentOKAlert("Success!", "Book was deleted", this, null);
+					tableView.ReloadData();
+				});
+			}
+
+			catch (Exception e) {
+				InvokeOnMainThread(() =>
+				{
+					Alerter.PresentOKAlert("Opps", e.Message, this, null);
+				});
+			}
 		}
 
         // Navigation
