@@ -1,4 +1,5 @@
 ﻿using System;
+using ProlificLibrary.ViewModels;
 using UIKit;
 
 namespace ProlificLibrary.iOS
@@ -41,7 +42,8 @@ namespace ProlificLibrary.iOS
 			activityIndicator.StopAnimating();
 
 			refreshControl.EndRefreshing();
-			tableView.ReloadData();
+
+			tableView.ReloadData();
 		}
 	}
 
@@ -55,6 +57,9 @@ namespace ProlificLibrary.iOS
 
 	public class BookListRefreshState : BookListState
 	{
-		public override void UpdateDesign()		{			refreshControl.BeginRefreshing();		}
+		public override void UpdateDesign()
+		{
+			refreshControl.BeginRefreshing();
+		}
 	}
 }

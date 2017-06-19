@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using ProlificLibrary.Networking;
+using ProlificLibrary.ViewModels;
 using UIKit;
 
 namespace ProlificLibrary.iOS
