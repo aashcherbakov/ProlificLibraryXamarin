@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ProlificLibrary.Networking;
+using ProlificLibrary.Networking.Endpoints;
 
-namespace ProlificLibrary
+namespace ProlificLibrary.ViewModels
 {
-    
-
     public interface IBookListState
     {
         void UpdateDesign();
@@ -26,9 +26,9 @@ namespace ProlificLibrary
 			Refreshing
         }
 
-        readonly IResource resource;
-        readonly IBookListStateFactory stateFactory;
-        IBookListState state;
+		private readonly IResource resource;
+		private readonly IBookListStateFactory stateFactory;
+		private IBookListState state;
 
         public List<Book> Books { get; private set; }
         public readonly string Title = "Library";
@@ -43,7 +43,7 @@ namespace ProlificLibrary
             UpdateState(State.Loading);
             try 
             {
-                var booksArray = await resource.GetBooks();
+                var booksArray = await resource.ExecuteRequest<Book[]>(endpoint: new GetBooksEndpoint());
                 Books = new List<Book>(booksArray);
                 UpdateState(State.Default);
             } 
@@ -59,8 +59,8 @@ namespace ProlificLibrary
 			UpdateState(State.Refreshing);
 			try
 			{
-				var booksArray = await resource.GetBooks();
-				Books = new List<Book>(booksArray);
+                var booksArray = await resource.ExecuteRequest<Book[]>(endpoint: new GetBooksEndpoint());
+                Books = new List<Book>(booksArray);
 				UpdateState(State.Default);
 			}
 			catch
@@ -92,14 +92,14 @@ namespace ProlificLibrary
 
 		// Private functions
 
-		void DeleteBookLocally(Book book)
+		private void DeleteBookLocally(Book book)
 		{
 			var index = Books.FindIndex(x => x.id == book.id);
 			if (index != -1)
 				Books.Remove(book);
 		}
 
-        void UpdateState(State newState)
+		private void UpdateState(State newState)
         {
             state = stateFactory.Create(newState);
             state.UpdateDesign();

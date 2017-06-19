@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using ProlificLibrary.Networking;
+using ProlificLibrary.Networking.Endpoints;
 
 namespace ProlificLibrary
 {
@@ -40,7 +42,7 @@ namespace ProlificLibrary
         {
             if (HasValidData()) {
                 var newBook = new Book(Title, Author, Categories, Publisher);
-                Book = await resource.AddBook(newBook);
+                Book = await resource.ExecuteRequest<Book>(endpoint: new AddBookEndpoint(newBook));
             } else {
                 throw new Exception(Constants.ErrorMessages.RequiredFields);
             }

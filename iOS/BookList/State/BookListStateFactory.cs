@@ -1,4 +1,5 @@
 ﻿using System;
+using ProlificLibrary.ViewModels;
 using UIKit;
 namespace ProlificLibrary.iOS
 {
@@ -10,7 +11,10 @@ namespace ProlificLibrary.iOS
         readonly UIActivityIndicatorView activityIndicator;
 		readonly UIRefreshControl refreshControl;
 
-        public BookListStateFactory(UIView mainView,									UITableView tableView,									BookListEmptyView emptyView,									UIActivityIndicatorView activityIndicator,
+        public BookListStateFactory(UIView mainView,
+									UITableView tableView,
+									BookListEmptyView emptyView,
+									UIActivityIndicatorView activityIndicator,
 		                            UIRefreshControl refreshControl)
         {
             this.emptyView = emptyView;

@@ -2,6 +2,7 @@
 using Foundation;
 using UIKit;
 using System.Threading.Tasks;
+using ProlificLibrary.ViewModels;
 
 namespace ProlificLibrary.iOS
 {
@@ -41,7 +42,9 @@ namespace ProlificLibrary.iOS
             selectionDelegate(book);
         }
 
-		public override UITableViewRowAction[] EditActionsForRow(UITableView tableView, NSIndexPath indexPath)		{			var editButton = UITableViewRowAction.Create(
+		public override UITableViewRowAction[] EditActionsForRow(UITableView tableView, NSIndexPath indexPath)
+		{
+			var editButton = UITableViewRowAction.Create(
 				UITableViewRowActionStyle.Normal, 
 				"Edit", 
 				(UITableViewRowAction arg1, NSIndexPath arg2) => OnEditCell(arg2)); 
@@ -51,7 +54,8 @@ namespace ProlificLibrary.iOS
 				"Delete", 
 				(UITableViewRowAction arg1, NSIndexPath arg2) => OnDeletion(arg2));
 
-			return new UITableViewRowAction[] { deleteButton, editButton };		}
+			return new UITableViewRowAction[] { deleteButton, editButton };
+		}
 
         // Private functions
 

@@ -1,23 +1,63 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using Newtonsoft.Json;
+using ProlificLibrary.Networking.Endpoints;
 
-namespace ProlificLibrary
+namespace ProlificLibrary.Networking
 {
     public class RemoteResource : IResource
     {
-        private const string kBaseUrl = "http://prolific-interview.herokuapp.com/58c1701210480b000a2948d6/";
+        private const string BaseUrl = "http://prolific-interview.herokuapp.com/58c1701210480b000a2948d6/";
 
         public RemoteResource() { } // constructor
 
+        public async Task<T> ExecuteRequest<T>(IEndpoint endpoint)
+        {
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage result = null;
+                StringContent content = null;
+
+                var url = BaseUrl + endpoint.Url;
+
+                if (endpoint.Payload != null)
+                {
+                    var data = JsonConvert.SerializeObject(endpoint.Payload);
+                    content = new StringContent(data, Encoding.UTF8, "application/json");
+                }
+
+                switch (endpoint.Method)
+                {
+                    case HttpMethodEnum.Get:
+                        result = await client.GetAsync(url);
+                        break;
+                    case HttpMethodEnum.Post:
+                        result = await client.PostAsync(url, content);
+                        break;
+                    case HttpMethodEnum.Put:
+                        result = await client.PutAsync(url, content);
+                        break;
+                    case HttpMethodEnum.Delete:
+                        result = await client.DeleteAsync(url);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+                if (result == null) return default(T);
+                var response = await result.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(response);
+            }
+        }
+       
         public async Task<Book[]> GetBooks()
         {
             using (var client = new HttpClient())
             {
-                var result = await client.GetAsync(kBaseUrl + "books");
+                var result = await client.GetAsync(BaseUrl + "books");
                 var content = await result.Content.ReadAsStringAsync();
                 var books = JsonConvert.DeserializeObject<Book[]>(content);
                 return books;
@@ -28,7 +68,7 @@ namespace ProlificLibrary
         {
             using (var client = new HttpClient())
             {
-                var result = await client.GetAsync(kBaseUrl + "books/" + id);
+                var result = await client.GetAsync(BaseUrl + "books/" + id);
                 return await DeserializeResult(result);
             }
         }
@@ -41,7 +81,7 @@ namespace ProlificLibrary
                 var data = JsonConvert.SerializeObject(updatedTime);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
 
-                var uri = kBaseUrl + "books/" + id + "/";
+                var uri = BaseUrl + "books/" + id + "/";
                 var result = await client.PutAsync(uri, content);
                 return await DeserializeResult(result);
             }
@@ -54,7 +94,7 @@ namespace ProlificLibrary
                 var data = JsonConvert.SerializeObject(book);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
 
-                var uri = kBaseUrl + "books";
+                var uri = BaseUrl + "books";
                 var result = await client.PostAsync(uri, content);
                 return await DeserializeResult(result);
             }
@@ -69,30 +109,30 @@ namespace ProlificLibrary
                 var data = JsonConvert.SerializeObject(updatedFields);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
 
-                var uri = kBaseUrl + "books/" + book.id + "/";
+                var uri = BaseUrl + "books/" + book.id + "/";
                 var result = await client.PutAsync(uri, content);
-				return await DeserializeResult(result);
+                return await DeserializeResult(result);
             }
         }
 
-		public async Task<Book> DeleteBook(Book book)
-		{
-			using (var client = new HttpClient())
-			{
-                var url = kBaseUrl + "books/" + book.id;
+        public async Task<Book> DeleteBook(Book book)
+        {
+            using (var client = new HttpClient())
+            {
+                var url = BaseUrl + "books/" + book.id;
                 var result = await client.DeleteAsync(url);
-				return await DeserializeResult(result);
-			}
-		}
+                return await DeserializeResult(result);
+            }
+        }
 
-		// Private 
+        // Private 
 
-		async Task<Book> DeserializeResult(HttpResponseMessage result)
-		{
-			var content = await result.Content.ReadAsStringAsync();
-			var book = JsonConvert.DeserializeObject<Book>(content);
-			return book;
-		}
+        async Task<Book> DeserializeResult(HttpResponseMessage result)
+        {
+            var content = await result.Content.ReadAsStringAsync();
+            var book = JsonConvert.DeserializeObject<Book>(content);
+            return book;
+        }
 
         Dictionary<string, string> UpdateParameters(Book book)
         {
@@ -104,5 +144,10 @@ namespace ProlificLibrary
             if (book.Categories != null)
                 updatedFields.Add("categories", book.Categories);
 
-            if (book.Publisher != null)                updatedFields.Add("publisher", book.Publisher);            return updatedFields;        }	}	
+            if (book.Publisher != null)
+                updatedFields.Add("publisher", book.Publisher);
+
+            return updatedFields;
+        }
+    }   
 }
