@@ -104,12 +104,14 @@
     <Folder Include="BookDetails\" />
     <Folder Include="BookDetails\Views\" />
     <Folder Include="EditBook\" />
+    <Folder Include="Subscription\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="BookList\Views\BookListTableViewCell.xib" />
     <InterfaceDefinition Include="BookList\Views\BookListEmptyView.xib" />
+    <InterfaceDefinition Include="Subscription\SubscriptionViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -143,6 +145,11 @@
     </Compile>
     <Compile Include="BookList\State\BookListStateFactory.cs" />
     <Compile Include="Utility\Router.cs" />
+    <Compile Include="Subscription\SubscriptionViewController.cs" />
+    <Compile Include="Subscription\SubscriptionViewController.designer.cs">
+      <DependentUpon>SubscriptionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subscription\IAPHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
