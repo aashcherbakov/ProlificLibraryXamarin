@@ -1,14 +1,14 @@
-﻿using UIKit;
-using System;
+﻿using System;
+using UIKit;
 
-namespace ProlificLibrary.iOS
+namespace ProlificLibrary.iOS.Utility
 {
 	public class Alerter
 	{
 		public Alerter() { }
 
 		#region Static Methods
-		public static void PresentOKAlert(
+		public static void PresentOkAlert(
             string title, 
             string description,
             UIViewController controller, 

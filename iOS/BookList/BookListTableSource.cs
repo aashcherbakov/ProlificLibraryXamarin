@@ -1,12 +1,10 @@
 ﻿using System;
 using Foundation;
-using UIKit;
-using System.Threading.Tasks;
 using ProlificLibrary.ViewModels;
+using UIKit;
 
-namespace ProlificLibrary.iOS
+namespace ProlificLibrary.iOS.BookList
 {
-
 	public delegate void BookSelectionDelegate(Book book);
 	public delegate void BookEditingDelegate(Book book);
 	public delegate void BookDeletingDelegate(Book book);

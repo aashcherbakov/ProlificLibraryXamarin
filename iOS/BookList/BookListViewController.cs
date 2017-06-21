@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Threading.Tasks;
+using ProlificLibrary.iOS.Utility;
 using ProlificLibrary.Networking;
+using ProlificLibrary.Routing;
 using ProlificLibrary.ViewModels;
 using UIKit;
 
-namespace ProlificLibrary.iOS
+namespace ProlificLibrary.iOS.BookList
 {
     public delegate void BookListUpdateDelegate(Book book);
 
-    public partial class BookListViewController : UIViewController
+    public partial class BookListViewController : UIViewController, IPresenter
     {
-        const float kEstimatedCellHeight = 40.0f;
+	    private const float EstimatedCellHeight = 40.0f;
 
-        BookListViewModel viewModel;
-        BookListTableSource tableSource;
-		BookListEmptyView emptyView;
-		UIRefreshControl refreshControl;
+	    private BookListViewModel viewModel;
+	    private BookListTableSource tableSource;
+	    private BookListEmptyView emptyView;
+	    private UIRefreshControl refreshControl;
 
         public BookListViewController(IntPtr handle) : base(handle) {}
 
@@ -27,7 +29,7 @@ namespace ProlificLibrary.iOS
 
 			var factory = new BookListStateFactory(View, tableView, emptyView, activityIndicator, refreshControl);
 			var resource = new RemoteResource();
-			viewModel = new BookListViewModel(resource, factory);
+			viewModel = new BookListViewModel(resource, factory, this, new Router());
 
 			SetupDesign();
 			await LoadData();
@@ -52,7 +54,7 @@ namespace ProlificLibrary.iOS
 
             tableView.Hidden = true;
             tableView.RegisterNibForCellReuse(BookListTableViewCell.Nib, BookListTableViewCell.Key);
-            tableView.EstimatedRowHeight = kEstimatedCellHeight;
+            tableView.EstimatedRowHeight = EstimatedCellHeight;
             tableView.Source = tableSource;
         }
 
@@ -67,7 +69,7 @@ namespace ProlificLibrary.iOS
         async Task LoadData()
         {
             try { await viewModel.LoadBooks(); }
-            catch (Exception exception) { Alerter.PresentOKAlert("Oops", exception.Message, this); }
+            catch (Exception exception) { Alerter.PresentOkAlert("Oops", exception.Message, this); }
         }
 
         void DidUpdateBook(Book book)
@@ -93,7 +95,7 @@ namespace ProlificLibrary.iOS
 			try {
 				await viewModel.DeleteBook(book);
 				InvokeOnMainThread(() => {
-					Alerter.PresentOKAlert("Success!", "Book was deleted", this, null);
+					Alerter.PresentOkAlert("Success!", "Book was deleted", this, null);
 					tableView.ReloadData();
 				});
 			}
@@ -101,7 +103,7 @@ namespace ProlificLibrary.iOS
 			catch (Exception e) {
 				InvokeOnMainThread(() =>
 				{
-					Alerter.PresentOKAlert("Opps", e.Message, this, null);
+					Alerter.PresentOkAlert("Opps", e.Message, this, null);
 				});
 			}
 		}
@@ -120,13 +122,19 @@ namespace ProlificLibrary.iOS
 
         void NavigaeteToBookDetails(Book book)
         {
-            var detailsViewModel = new BookDetailsViewModel(book);
-            var storyBoard = UIStoryboard.FromName("Main", null);
-            var detailsController = storyBoard.InstantiateViewController("BookDetailsViewController") as BookDetailsViewController;
-            detailsController.viewModel = detailsViewModel;
-            detailsController.didUpdateBook += DidUpdateBook;
-            NavigationController.PushViewController(detailsController, true);
+	        viewModel.SelectBook(new BookDetailsPayload(book));
+//            var detailsViewModel = new BookDetailsViewModel(book);
+//            var storyBoard = UIStoryboard.FromName("Main", null);
+//            var detailsController = storyBoard.InstantiateViewController("BookDetailsViewController") as BookDetailsViewController;
+//            detailsController.ViewModel = detailsViewModel;
+//            detailsController.DidUpdateBook += DidUpdateBook;
+//            NavigationController.PushViewController(detailsController, true);
         }
+
+	    public void Present(IPresenter screen, NavigationType navigationType)
+	    {
+		    this.PresentScreen(screen, navigationType);
+	    }
     }
 }
 

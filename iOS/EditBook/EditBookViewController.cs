@@ -1,6 +1,8 @@
 ﻿using Foundation;
 using System;
 using System.Threading.Tasks;
+using ProlificLibrary.iOS.BookList;
+using ProlificLibrary.iOS.Utility;
 using UIKit;
 
 namespace ProlificLibrary.iOS
@@ -37,7 +39,7 @@ namespace ProlificLibrary.iOS
             UpdateViewModelValues();
 
             try { await SubmitBookChanges(); } 
-            catch (Exception e) { Alerter.PresentOKAlert("Oops", e.Message, this); }
+            catch (Exception e) { Alerter.PresentOkAlert("Oops", e.Message, this); }
         }
 
         void UpdateViewModelValues()
@@ -57,7 +59,7 @@ namespace ProlificLibrary.iOS
 
         void PresentSuccessAlert()
         {
-            Alerter.PresentOKAlert(Constants.SuccessMessages.Success, 
+            Alerter.PresentOkAlert(Constants.SuccessMessages.Success, 
                                    Constants.SuccessMessages.BookAddedWithSuccess, this, (action) =>
             {
                 NavigationController.PopViewController(true);
