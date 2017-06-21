@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using ProlificLibrary.Networking;
 using ProlificLibrary.Networking.Endpoints;
+using ProlificLibrary.Routing;
 
 namespace ProlificLibrary.ViewModels
 {
@@ -29,14 +30,18 @@ namespace ProlificLibrary.ViewModels
 		private readonly IResource resource;
 		private readonly IBookListStateFactory stateFactory;
 		private IBookListState state;
+		private readonly IPresenter presenter;
+		private readonly IRouter router;
 
         public List<Book> Books { get; private set; }
         public readonly string Title = "Library";
 
-        public BookListViewModel(IResource resource, IBookListStateFactory stateFactory) {
+        public BookListViewModel(IResource resource, IBookListStateFactory stateFactory, IPresenter presenter, IRouter router) {
 			this.resource = resource;
             this.stateFactory = stateFactory;
-		}
+	        this.presenter = presenter;
+	        this.router = router;
+        }
 
 		public async Task LoadBooks() 
         {
@@ -88,6 +93,11 @@ namespace ProlificLibrary.ViewModels
 		{
             await resource.DeleteBook(book); 
             DeleteBookLocally(book);
+		}
+
+		public void SelectBook(ITransferable payload)
+		{
+			router.NavigateTo(Destination.BookDetails, presenter, payload, NavigationType.Push);
 		}
 
 		// Private functions

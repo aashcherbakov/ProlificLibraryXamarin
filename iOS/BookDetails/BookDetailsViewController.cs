@@ -1,14 +1,27 @@
 ﻿using System;
 using System.Threading.Tasks;
+using ProlificLibrary.iOS.BookList;
+using ProlificLibrary.iOS.Utility;
+using ProlificLibrary.Routing;
 using UIKit;
 
 namespace ProlificLibrary.iOS
 {
-    public partial class BookDetailsViewController : UIViewController
+    public class BookDetailsPayload : ITransferable
+    {
+        public Book Book;
+
+        public BookDetailsPayload(Book book)
+        {
+            Book = book;
+        }
+    }
+    
+    public partial class BookDetailsViewController : UIViewController, IPresenter
     {
         public BookDetailsViewController(IntPtr handle) : base(handle) { }
-        public BookDetailsViewModel viewModel;
-        public event BookListUpdateDelegate didUpdateBook;
+        public BookDetailsViewModel ViewModel;
+        public event BookListUpdateDelegate DidUpdateBook;
 
         UITextField field;
 
@@ -17,9 +30,9 @@ namespace ProlificLibrary.iOS
             base.ViewDidLoad();
             SetupDesign();
 
-            didUpdateBook += (book) =>
+            DidUpdateBook += (book) =>
             {
-                viewModel.UpdateBook(book);
+                ViewModel.UpdateBook(book);
                 UpdateLabels();
             };
         }
@@ -50,13 +63,13 @@ namespace ProlificLibrary.iOS
         async Task CheckoutBook(string name)
         {
             try {
-                await viewModel.CheckoutBook(name);
+                await ViewModel.CheckoutBook(name);
                 UpdateCheckedOutBy();
-                didUpdateBook(viewModel.Book);
+                DidUpdateBook?.Invoke(ViewModel.Book);
             }
 
             catch (Exception e) {
-                Alerter.PresentOKAlert("Oops", e.Message, this);
+                Alerter.PresentOkAlert("Oops", e.Message, this);
             }
         }
 
@@ -73,10 +86,10 @@ namespace ProlificLibrary.iOS
 
         void UpdateLabels()
         {
-            titleLabel.Text = viewModel.Title;
-            subtitleLabel.Text = viewModel.Author;
-            publisherLabel.Text = viewModel.Publisher;
-            categoriesLabel.Text = viewModel.Categories;
+            titleLabel.Text = ViewModel.Title;
+            subtitleLabel.Text = ViewModel.Author;
+            publisherLabel.Text = ViewModel.Publisher;
+            categoriesLabel.Text = ViewModel.Categories;
         }
 
         void AddEditBarButton()
@@ -89,8 +102,8 @@ namespace ProlificLibrary.iOS
         {
             InvokeOnMainThread(() =>
             {
-                lastCheckedOutLabel.Text = viewModel.LastCheckedOut;
-                lastCheckedOutByLabel.Text = viewModel.LastCheckedOutBy;
+                lastCheckedOutLabel.Text = ViewModel.LastCheckedOut;
+                lastCheckedOutByLabel.Text = ViewModel.LastCheckedOutBy;
             });
         }
 
@@ -109,12 +122,17 @@ namespace ProlificLibrary.iOS
 
         void NavigateToEditBook()
         {
-            var editViewModel = new BookEditViewModel(viewModel.Book);
+            var editViewModel = new BookEditViewModel(ViewModel.Book);
             var storyBoard = UIStoryboard.FromName("Main", null);
             var editViewController = storyBoard.InstantiateViewController("EditBookViewController") as EditBookViewController;
             editViewController.viewModel = editViewModel;
-            editViewController.didUpdateBook = didUpdateBook;
+            editViewController.didUpdateBook = DidUpdateBook;
             NavigationController.PushViewController(editViewController, true);
+        }
+
+        public void Present(IPresenter screen, NavigationType navigationType)
+        {
+            this.PresentScreen(screen, navigationType);
         }
     }
 }
